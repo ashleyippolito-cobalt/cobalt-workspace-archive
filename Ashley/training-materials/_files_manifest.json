@@ -1,0 +1,299 @@
+[
+  {
+    "course": "1302-transcription-transcript-format",
+    "saltId": "1302",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=52",
+    "name": "practice1_andy-21.mp3",
+    "bytes": 198246,
+    "via": "cached"
+  },
+  {
+    "course": "1302-transcription-transcript-format",
+    "saltId": "1302",
+    "label": "Download beginning SALT transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=53",
+    "name": "1302 Practice Andy.SLT",
+    "bytes": 147,
+    "via": "cached"
+  },
+  {
+    "course": "1302-transcription-transcript-format",
+    "saltId": "1302",
+    "label": "View Master Transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=652",
+    "name": "1302 Practice Andy Transcribed.slt",
+    "bytes": 588,
+    "via": "pluginfile"
+  },
+  {
+    "course": "1302-transcription-transcript-format",
+    "saltId": "1302",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=54",
+    "name": "practice2_kelina-23.mp3",
+    "bytes": 942367,
+    "via": "cached"
+  },
+  {
+    "course": "1302-transcription-transcript-format",
+    "saltId": "1302",
+    "label": "Download beginning SALT transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=55",
+    "name": "1302_Practice2_Kelina.SLT",
+    "bytes": 191,
+    "via": "cached"
+  },
+  {
+    "course": "1303-transcription-utterance-segmentation",
+    "saltId": "1303",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=60",
+    "name": "practice1_andy-25.mp3",
+    "bytes": 198246,
+    "via": "cached"
+  },
+  {
+    "course": "1303-transcription-utterance-segmentation",
+    "saltId": "1303",
+    "label": "Download beginning SALT transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=61",
+    "name": "1303 Practice Andy.slt",
+    "bytes": 588,
+    "via": "cached"
+  },
+  {
+    "course": "1303-transcription-utterance-segmentation",
+    "saltId": "1303",
+    "label": "View Master Transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=653",
+    "name": "1303 Practice Andy Transcribed.slt",
+    "bytes": 606,
+    "via": "pluginfile"
+  },
+  {
+    "course": "1303-transcription-utterance-segmentation",
+    "saltId": "1303",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=62",
+    "name": "Practice2_Kelina_DDS.mp3",
+    "bytes": 942367,
+    "via": "cached"
+  },
+  {
+    "course": "1303-transcription-utterance-segmentation",
+    "saltId": "1303",
+    "label": "Download beginning SALT transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=254",
+    "name": "1303_Practice2_Kelina.SLT",
+    "bytes": 1650,
+    "via": "cached"
+  },
+  {
+    "course": "1304-transcription-conventions-part-1",
+    "saltId": "1304",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=78",
+    "name": "practice1_andy-38.mp3",
+    "bytes": 198246,
+    "via": "cached"
+  },
+  {
+    "course": "1304-transcription-conventions-part-1",
+    "saltId": "1304",
+    "label": "Download beginning SALT transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=79",
+    "name": "1304 Practice Andy.slt",
+    "bytes": 606,
+    "via": "cached"
+  },
+  {
+    "course": "1304-transcription-conventions-part-1",
+    "saltId": "1304",
+    "label": "View Master Transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=654",
+    "name": "1304 Practice Andy Transcribed.pdf",
+    "bytes": 74647,
+    "via": "pluginfile"
+  },
+  {
+    "course": "1304-transcription-conventions-part-1",
+    "saltId": "1304",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=80",
+    "name": "practice2_kelina-40.mp3",
+    "bytes": 942367,
+    "via": "cached"
+  },
+  {
+    "course": "1304-transcription-conventions-part-1",
+    "saltId": "1304",
+    "label": "Download beginning SALT transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=81",
+    "name": "1304_Practice2_Kelina.SLT",
+    "bytes": 1667,
+    "via": "cached"
+  },
+  {
+    "course": "1305-transcription-conventions-part-2",
+    "saltId": "1305",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=98",
+    "name": "practice1_andy-42.mp3",
+    "bytes": 198246,
+    "via": "cached"
+  },
+  {
+    "course": "1305-transcription-conventions-part-2",
+    "saltId": "1305",
+    "label": "Download beginning SALT transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=99",
+    "name": "1305 Practice Andy.slt",
+    "bytes": 612,
+    "via": "cached"
+  },
+  {
+    "course": "1305-transcription-conventions-part-2",
+    "saltId": "1305",
+    "label": "View Master Transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=655",
+    "name": "1305 Practice Andy Transcribed.pdf",
+    "bytes": 99499,
+    "via": "pluginfile"
+  },
+  {
+    "course": "1305-transcription-conventions-part-2",
+    "saltId": "1305",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=100",
+    "name": "practice2_kelina-44.mp3",
+    "bytes": 942367,
+    "via": "cached"
+  },
+  {
+    "course": "1305-transcription-conventions-part-2",
+    "saltId": "1305",
+    "label": "Download beginning SALT transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=101",
+    "name": "1305_Practice2_Kelina.SLT",
+    "bytes": 1763,
+    "via": "cached"
+  },
+  {
+    "course": "1306-transcription-conventions-part-3",
+    "saltId": "1306",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=110",
+    "name": "practice_kelinacon-48.mp3",
+    "bytes": 409106,
+    "via": "cached"
+  },
+  {
+    "course": "1306-transcription-conventions-part-3",
+    "saltId": "1306",
+    "label": "Download beginning SALT transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=111",
+    "name": "1306_Practice_KelinaCon.SLT",
+    "bytes": 1189,
+    "via": "cached"
+  },
+  {
+    "course": "1306-transcription-conventions-part-3",
+    "saltId": "1306",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=120",
+    "name": "practice1_andy-50.mp3",
+    "bytes": 198246,
+    "via": "cached"
+  },
+  {
+    "course": "1306-transcription-conventions-part-3",
+    "saltId": "1306",
+    "label": "Download beginning SALT transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=121",
+    "name": "1306 Practice Andy.slt",
+    "bytes": 650,
+    "via": "cached"
+  },
+  {
+    "course": "1306-transcription-conventions-part-3",
+    "saltId": "1306",
+    "label": "View Master Transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=656",
+    "name": "1306 Practice Andy Transcribed.pdf",
+    "bytes": 84799,
+    "via": "pluginfile"
+  },
+  {
+    "course": "1306-transcription-conventions-part-3",
+    "saltId": "1306",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=122",
+    "name": "practice2_kelina-52.mp3",
+    "bytes": 942367,
+    "via": "cached"
+  },
+  {
+    "course": "1306-transcription-conventions-part-3",
+    "saltId": "1306",
+    "label": "Download beginning SALT transcript",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=123",
+    "name": "1306_Practice2_Kelina.SLT",
+    "bytes": 1765,
+    "via": "cached"
+  },
+  {
+    "course": "1308-transcription-practice-samples",
+    "saltId": "1308",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=125",
+    "name": "Practice1_Albany-54.MP3",
+    "bytes": 171494,
+    "via": "cached"
+  },
+  {
+    "course": "1308-transcription-practice-samples",
+    "saltId": "1308",
+    "label": "File 1: Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=126",
+    "name": "practice2_blake-55.mp3",
+    "bytes": 546351,
+    "via": "pluginfile"
+  },
+  {
+    "course": "1308-transcription-practice-samples",
+    "saltId": "1308",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=127",
+    "name": "practice3_kenny-56.mp3",
+    "bytes": 278335,
+    "via": "cached"
+  },
+  {
+    "course": "1308-transcription-practice-samples",
+    "saltId": "1308",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=128",
+    "name": "practice4_cyanna-57.mp3",
+    "bytes": 272979,
+    "via": "cached"
+  },
+  {
+    "course": "1308-transcription-practice-samples",
+    "saltId": "1308",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=129",
+    "name": "practice5_alex-58.mp3",
+    "bytes": 665339,
+    "via": "cached"
+  },
+  {
+    "course": "1308-transcription-practice-samples",
+    "saltId": "1308",
+    "label": "Download audio for transcription playback",
+    "url": "https://classes.saltsoftware.com/mod/resource/view.php?id=130",
+    "name": "practice6_nick-59.mp3",
+    "bytes": 785371,
+    "via": "cached"
+  }
+]

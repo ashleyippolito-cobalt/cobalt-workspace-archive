@@ -1,0 +1,5516 @@
+{
+  "snapshot_date": "2026-07-01",
+  "generated_date": "2026-07-03",
+  "source": "Linear CORE-1189 (Releases umbrella) + child release bundles + Core Team list_issues sweep (started/unstarted)",
+  "releases": [
+    {
+      "id": "CORE-1270",
+      "name": "Mars",
+      "level": "major",
+      "parent": null,
+      "codename": "Mars",
+      "status_linear": "In QA",
+      "integration_branch": "jeremy/integration-mars",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "description": "Combined product release bundling Mercury + Saturn + Guillermo's editor/transcriber workflow + Lyra + Pluto (release-of-releases).",
+      "notes": "Merged into master (prod branch) + dev + staging. Prod deploy not yet run (no vX.Y.Z tag, deploy-prod.yml not run). Trailing gold-corpus commit 185182cf/PR #527 not yet re-promoted to all envs.",
+      "effective_status": "Done",
+      "stale": true,
+      "prod_deployed": false
+    },
+    {
+      "id": "CORE-1190",
+      "name": "Mercury",
+      "level": "minor",
+      "parent": "CORE-1270",
+      "codename": "Mercury",
+      "status_linear": "In QA",
+      "integration_branch": "jeremy/integration-product-hardening-mercury",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "description": "Admin cross-org org management + in-app multi-org (create/close/login-picker) + first-run/billing/security/RBAC hardening.",
+      "notes": "Merged into all three env branches (own PR #399 + Mars bundle); prod deploy not yet run.",
+      "effective_status": "Done",
+      "stale": true,
+      "prod_deployed": false
+    },
+    {
+      "id": "CORE-1191",
+      "name": "Saturn",
+      "level": "minor",
+      "parent": "CORE-1270",
+      "codename": "Saturn",
+      "status_linear": "In QA",
+      "integration_branch": "jeremy/integration-registration-hardening-saturn",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "description": "Registration & Subscription Lifecycle Audit remediation (CORE-1165 cluster) \u2014 student checkout/subscription, legal/compliance capture, test-coverage, webhook robustness, tenant isolation.",
+      "notes": "Merged into all three env branches via Mars bundle; prod deploy not yet run.",
+      "effective_status": "Done",
+      "stale": true,
+      "prod_deployed": false
+    },
+    {
+      "id": "CORE-1245",
+      "name": "Lyra",
+      "level": "minor",
+      "parent": "CORE-1270",
+      "codename": "Lyra",
+      "status_linear": "In Review",
+      "integration_branch": "shahruk/integration-saltier-pipeline-lyra",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "description": "Shahruk's saltier transcription pipeline (per-job modes, Parakeet ASR, graph config) + async convention-editor AI rewire.",
+      "notes": "Merged into all three env branches via Mars bundle (release PR #411 merged 2026-06-24); prod deploy not yet run.",
+      "effective_status": "Done",
+      "stale": true,
+      "prod_deployed": false
+    },
+    {
+      "id": "CORE-1300",
+      "name": "Pluto",
+      "level": "minor",
+      "parent": "CORE-1270",
+      "codename": "Pluto",
+      "status_linear": "In Review",
+      "integration_branch": "jeremy/integration-org-settings-pluto",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "description": "Organization Settings refinements \u2014 org-admin + site-admin UX fixes (nav->org-switcher, Payment-methods tab + card-on-file, Users tab + license status, Student plan, context Help panel, invite-link & license-count bug fixes).",
+      "notes": "Merged into all three env branches via Mars bundle (one nix-vendorHash straggler e5074cb9 not re-promoted from the branch tip); prod deploy not yet run.",
+      "effective_status": "Done",
+      "stale": true,
+      "prod_deployed": false
+    },
+    {
+      "id": "CORE-1550",
+      "name": "Earth",
+      "level": "minor",
+      "parent": "CORE-1270",
+      "codename": "Earth",
+      "status_linear": "In QA",
+      "integration_branch": "guillermo/integration-earth",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "description": "Combined product release bundling Guillermo's in-flight SALT/frontend fixes into one coordinated promotion (functions as a Mars sub-release).",
+      "notes": "Merged into Mars via a merged PR (integration PR #511 -> jeremy/integration-mars) and Mars is on all three env branches, so Earth is \u2611\u2611\u2611.",
+      "effective_status": "Done",
+      "stale": true,
+      "prod_deployed": false
+    },
+    {
+      "id": "CORE-1566",
+      "name": "Orion",
+      "level": "major",
+      "parent": null,
+      "codename": "Orion",
+      "status_linear": "In Progress",
+      "integration_branch": "release/orion",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "description": "Product release following Mars; gathers feature/fix branches that land post-Mars-cut (speaker-caseload ownership scoping, admin release-info page, PHI retention hardening, erasure/retention deletes, IDOR audit sweep, Neptune licensing epic, Magento connector, targeted bug fixes).",
+      "notes": "In progress \u2014 gathering constituents; release/orion cut post-Mars, 11 commits, not yet promoted to any env. Some constituents (CORE-1294, CORE-1298) already landed in the master base via Pluto and ride Orion automatically.",
+      "effective_status": "In Progress",
+      "stale": false,
+      "prod_deployed": false
+    },
+    {
+      "id": "CORE-1227",
+      "name": "Neptune",
+      "level": "minor",
+      "parent": "CORE-1566",
+      "codename": "Neptune",
+      "status_linear": "In Progress",
+      "integration_branch": "feature branches (phased, on develop)",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "description": "SaaS licensing-model overhaul \u2014 phased, multi-workstream epic: user/org dual-ownership licenses, personal-org provisioning, student verification, org-context safeguards, anti-abuse controls. Committed to Orion scope (2026-06-30).",
+      "notes": "No integration branch cut yet; Phase 0 (ADRs) in review, Phase 1 (foundations) in review, Phase 2 in progress. Phases 3/4b blocked on design-committee escalations #9/#10. Neptune branches currently based on 'saturn' plan and must re-target onto release/orion.",
+      "effective_status": "In Progress",
+      "stale": false,
+      "prod_deployed": false
+    },
+    {
+      "id": "CORE-1628",
+      "name": "Bull",
+      "level": "minor",
+      "parent": "CORE-1566",
+      "codename": "Bull",
+      "status_linear": "In Progress",
+      "integration_branch": "guillermo/integration-bull",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "description": "Sub-release of Orion: batches post-Mars SALT editor/transcriber + UI fix PRs (#529-#538) onto one integration branch, which promotes into release/orion (not directly into env branches).",
+      "notes": "All 10 constituent PRs merged into guillermo/integration-bull as of 2026-07-03 (51 commits ahead of origin/master). Bundle -> release/orion PR not yet opened; not yet in any long-lived branch.",
+      "effective_status": "In Progress",
+      "stale": false,
+      "prod_deployed": false
+    },
+    {
+      "id": "CORE-1193",
+      "name": "Rust",
+      "level": "major",
+      "parent": null,
+      "codename": "Rust",
+      "status_linear": "Backlog",
+      "integration_branch": "jeremy/integration-performance-cache-rust (planned)",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "description": "Redis/Memorystore performance cache release \u2014 shared Redis cache for RBAC + feature-flag hot paths (permission-revocation staleness fix; latency + DB-load wins).",
+      "notes": "Backlog (infra-blocked). Component PRs (spice-rack #299, gcp-infrastructure #43) moved out of draft but integration branch not yet cut.",
+      "effective_status": "Backlog",
+      "stale": false,
+      "prod_deployed": false
+    },
+    {
+      "id": "CORE-1627",
+      "name": "Transcriber Portal 1.1",
+      "level": "major",
+      "parent": null,
+      "codename": "Transcriber Portal 1.1",
+      "status_linear": "Backlog",
+      "integration_branch": "release/transcriber-portal-1.1 (not yet cut)",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "description": "SALT company/ops dashboards (General Admin / Transcription Admin / Transcriber) \u2014 productionizes the CORE-1276 frozen prototypes. Standalone WIP release, not in Orion; major-release target TBD.",
+      "notes": "Planned \u2014 WIP; 12 components (rocks/pebbles/sand: F0/F1 foundations, R1-R4, P1-P5, sand chrome) all Backlog, no PRs yet.",
+      "effective_status": "Backlog",
+      "stale": false,
+      "prod_deployed": false
+    }
+  ],
+  "features_by_release": [
+    {
+      "major": "Mars",
+      "release": "Mercury",
+      "tier": "Feature",
+      "id": "CORE-1185",
+      "title": "In-app multi-org (create/close/login-picker)",
+      "description": "Create a separate org (incl. Student) from account settings (capped 25/user, one-student guard); list + close orgs (OrgAdmin only, soft-delete + cancel-at-period-end); login org picker for multi-org users.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #400; merged via Mercury -> Mars -> master.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Mercury",
+      "tier": "Refactor",
+      "id": "CORE-1184",
+      "title": "Promote org-detail from dialog to first-class page",
+      "description": "refactor(admin): /admin/orgs/[id] \u2014 pure relocation, foundation for inline management.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #395.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Mercury",
+      "tier": "Feature",
+      "id": "CORE-1183",
+      "title": "Admin area: cross-org org-settings management",
+      "description": "Manage an org's subscription licenses + professional-services wallet from the admin area without being a member, gated on global.org.manage.settings.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #396.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Mercury",
+      "tier": "Feature",
+      "id": "CORE-1186",
+      "title": "Admin area: cross-org license-quantity change",
+      "description": "PATCH /v1/admin/orgs/{id}/subscriptions/{sub_id}/quantity with 1..100 bounds + license-shrink floor (409).",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #398. Plan/tier swap deliberately deferred.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Mercury",
+      "tier": "Fix",
+      "id": "CORE-1182",
+      "title": "First-run wizard silently completes on failed admin invite",
+      "description": "verifyOrInviteAdmin now returns an error; configured invite failure -> 502 + provisioning rollback.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #394.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Mercury",
+      "tier": "Fix",
+      "id": "CORE-1181",
+      "title": "Unassign license false-error on 204 No Content",
+      "description": "saltRequest called res.json() on a 204 body; now returns undefined for 204/Content-Length:0.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #393.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Mercury",
+      "tier": "Fix",
+      "id": "CORE-1152",
+      "title": "/plans page security & UX hardening",
+      "description": "Open-redirect prevention on redirect_url, plan validation before Checkout, capability-gating, plan-selection preservation through sign-up.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #391.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Mercury",
+      "tier": "Fix",
+      "id": "CORE-1136",
+      "title": "Re-invited OrgAdmin loses other org-scoped roles",
+      "description": "syncOrgAdminRBAC now uses idempotent AddUserOrgRole instead of SetUserOrgRoles.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #390.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Saturn",
+      "tier": "Fix",
+      "id": "CORE-1166",
+      "title": "P0: Student checkout anomaly recovery (paid-but-no-subscription)",
+      "description": "Registration & Subscription Lifecycle Audit P0 finding.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "Component of CORE-1165 audit cluster.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Saturn",
+      "tier": "Fix",
+      "id": "CORE-1167",
+      "title": "P0: Student subscription materialization race \u2014 missing PII verification",
+      "description": "Registration & Subscription Lifecycle Audit P0 finding.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Saturn",
+      "tier": "Feature",
+      "id": "CORE-1168",
+      "title": "P0: Verify/implement student-verification backend endpoint",
+      "description": "Registration & Subscription Lifecycle Audit P0 finding.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Saturn",
+      "tier": "Feature",
+      "id": "CORE-1169",
+      "title": "P0: BAA/MSA clickwrap + authority-to-bind capture in create-org wizard",
+      "description": "Registration & Subscription Lifecycle Audit P0 finding.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Saturn",
+      "tier": "Test",
+      "id": "CORE-1170",
+      "title": "P0: Critical-path test-coverage backfill to 80%",
+      "description": "Registration + subscription critical-path coverage.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Saturn",
+      "tier": "Fix",
+      "id": "CORE-1171",
+      "title": "P1: Webhook robustness hardening",
+      "description": "Ordering, replay, resurrection, Clerk sync.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Saturn",
+      "tier": "Test",
+      "id": "CORE-1172",
+      "title": "P1: Automated BOLA (cross-org) + SQL-injection test suite",
+      "description": "",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Saturn",
+      "tier": "Feature",
+      "id": "CORE-1173",
+      "title": "P1: WORM enforcement for consent ledger + meaningful-assent panel",
+      "description": "",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Saturn",
+      "tier": "Fix",
+      "id": "CORE-1174",
+      "title": "P1: Verify & document invite token entropy",
+      "description": "",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Saturn",
+      "tier": "Fix",
+      "id": "CORE-1175",
+      "title": "P1: Repair agent test-execution harness",
+      "description": "Blocked live testing during audit.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Saturn",
+      "tier": "Fix",
+      "id": "CORE-1176",
+      "title": "P2: LOW-severity hardening rollup",
+      "description": "Rate limits, input validation, secrets, dep-scan, docs.",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Lyra",
+      "tier": "Feature",
+      "id": "CORE-1028",
+      "title": "Per-job converter selection via named pipeline modes",
+      "description": "Pipeline modes (full/asr/conventions) + backend->Pub/Sub->worker wiring.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #343.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Lyra",
+      "tier": "Feature",
+      "id": "CORE-571",
+      "title": "Deploy Parakeet base model to transcription pipeline",
+      "description": "NeMo Parakeet TDT ASR converter (drop-in WhisperDecoder alternative).",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #345.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Lyra",
+      "tier": "Feature",
+      "id": "CORE-1238",
+      "title": "Graph-based pipeline config (named components + DAG)",
+      "description": "Graph/DAG pipeline config (named components + connections + ports), config v1.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #407.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Lyra",
+      "tier": "Feature",
+      "id": "CORE-1194",
+      "title": "Route convention-editor AI buttons through async pub/sub pipeline",
+      "description": "Transcribe / Apply Conventions buttons via the async pipeline.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #401.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Lyra",
+      "tier": "Feature",
+      "id": "CORE-1029",
+      "title": "Gemini API ASR backend (hybrid, fused for timestamps)",
+      "description": "Excluded from Lyra \u2014 stays a draft, not in this release.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Explicitly excluded from Lyra bundle (PR #350 draft).",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Mars",
+      "release": "Pluto",
+      "tier": "Feature",
+      "id": "CORE-1289",
+      "title": "Replace left-nav Subscription with per-org Manage",
+      "description": "Relabel surface 'Organization settings'.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Pluto",
+      "tier": "Feature",
+      "id": "CORE-1290",
+      "title": "Change My Plan modal: add missing Student plan option",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Pluto",
+      "tier": "Feature",
+      "id": "CORE-1291",
+      "title": "Org switcher: remove Manage organization item; hide dropdown for single-org users",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Pluto",
+      "tier": "Feature",
+      "id": "CORE-1292",
+      "title": "Rename Professional Services tab -> Payment methods; card-on-file + billing mode",
+      "description": "Card-on-file partially landed (hosted-setup Checkout pt 1); billing-mode selection deferred to CORE-1360.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Pluto",
+      "tier": "Feature",
+      "id": "CORE-1293",
+      "title": "Let a user edit their own name on org-settings page",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Pluto",
+      "tier": "Fix",
+      "id": "CORE-1294",
+      "title": "Shareable invite link regenerates instead of persisting",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "Merged to master via Pluto (313ef0be, merge 763a0399); already in release/orion base.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Pluto",
+      "tier": "Feature",
+      "id": "CORE-1295",
+      "title": "Rename Team tab -> Users; combine members + license assignment",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Pluto",
+      "tier": "Feature",
+      "id": "CORE-1296",
+      "title": "Make right-side Help panel context-sensitive per active tab",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Pluto",
+      "tier": "Feature",
+      "id": "CORE-1297",
+      "title": "Create-a-new-org: explain what an org is + name examples",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Pluto",
+      "tier": "Fix",
+      "id": "CORE-1298",
+      "title": "Admin org-detail: increasing license count wrongly blocked by reduce-floor guard",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "Merged to master via Pluto (09843646, merge bb7aae21); already in release/orion base.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Pluto",
+      "tier": "Feature",
+      "id": "CORE-1299",
+      "title": "Admin Create Organization modal: add missing Student plan option",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Pluto",
+      "tier": "Test",
+      "id": "CORE-1366",
+      "title": "Edge-case coverage for billing-mode + card-on-file",
+      "description": "Landed with CORE-1292.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "Review follow-up from CORE-1292 /finish-feature board.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Pluto",
+      "tier": "Fix",
+      "id": "CORE-1368",
+      "title": "Validate Stripe return URLs / open-redirect hardening",
+      "description": "Landed with CORE-1292.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "Security follow-up; a pre-existing open-redirect surfaced during Pluto security review.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Earth",
+      "tier": "Fix",
+      "id": "CORE-1517",
+      "title": "Go to Dashboard exit on prof-services waiting screen",
+      "description": "",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #495.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Earth",
+      "tier": "Fix",
+      "id": "CORE-1390",
+      "title": "NO-PHI banner: dock so it never clips content",
+      "description": "",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #497.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Earth",
+      "tier": "Fix",
+      "id": "CORE-1441",
+      "title": "Cap transcription confirm dialog height so it scrolls",
+      "description": "",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #499.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Earth",
+      "tier": "Feature",
+      "id": "CORE-1374",
+      "title": "Self-serve machine first-draft + reports<->editor nav + dashboard exits",
+      "description": "",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #498; final re-review PR #512 (orphaned-job guard + a11y/SQL hardening) in review.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Earth",
+      "tier": "Feature",
+      "id": "CORE-1445",
+      "title": "Reports<->editor nav (bundled with CORE-1374)",
+      "description": "",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #498.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Earth",
+      "tier": "Feature",
+      "id": "CORE-1551",
+      "title": "Collapsible Target Speaker combobox in new-session wizard",
+      "description": "",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #500.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Earth",
+      "tier": "Feature",
+      "id": "CORE-1568",
+      "title": "Require 'I understand' ack before upload on non-prod",
+      "description": "",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #506.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Earth",
+      "tier": "Feature",
+      "id": "CORE-1571",
+      "title": "Remove database selection from transcribe flow",
+      "description": "",
+      "linear_status": "In QA",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #510.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Mars",
+      "release": "Earth",
+      "tier": "Feature",
+      "id": "CORE-1554",
+      "title": "SLP dashboard notification hub \u2014 tabs 1 & 2 + speakers grid",
+      "description": "3-tab SLP notification hub, recent-speakers grid, greeting + active-speaker count.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "PR #501 \u2014 changes requested + merge conflicts (DIRTY); NOT yet merged into Earth; re-targeted to release/orion per SALT-slice routing note. Verified 2026-07-01: not in any long-lived branch.",
+      "effective_status": "In Review",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Orion",
+      "tier": "Fix",
+      "id": "CORE-1549",
+      "title": "Speaker (caseload) ownership scoping",
+      "description": "Per-clinician visibility on SALT caseload; non-admin clinicians see only speakers they created via new speakers.view-all RBAC permission. Closes cross-tenant PII gap.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "PR #504, open; not yet merged into release/orion.",
+      "effective_status": "In Review",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Orion",
+      "tier": "Feature",
+      "id": "CORE-1283",
+      "title": "Admin Release Info page",
+      "description": "New admin-area Release Info tab (behind admin.access) surfacing deployed BUILD_VERSION/BUILD_COMMIT/BUILD_DATE/NIX_OUTPUT_HASH.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "PR #507 (-> release/orion), open.",
+      "effective_status": "In Review",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Orion",
+      "tier": "Feature",
+      "id": "CORE-1501",
+      "title": "PHI retention window + fail-fast validation",
+      "description": "Replace silent 365-day retention default with validating loader; prod/staging fail-fast when RETENTION_*_DAYS unset.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #492 -> mars; based off jeremy/integration-mars per 2026-06-30 decision \u2014 flows into Orion via Mars -> master -> release/orion.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Orion",
+      "release": "Orion",
+      "tier": "Feature",
+      "id": "CORE-1092",
+      "title": "Erasure/retention deletes audio + transcripts",
+      "description": "GDPR erasure + time-based retention now delete subject's GCS session audio (per-subject erasure sweep + RetentionSweeper).",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #493 -> mars; based off jeremy/integration-mars.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Orion",
+      "release": "Orion",
+      "tier": "Feature",
+      "id": "CORE-1102",
+      "title": "Schedule the retention/de-id worker",
+      "description": "POST /api/internal/v1/run-lifecycle (scheduler-OIDC gated) drives DB de-id/hard-delete worker + GCS audio sweep.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #508 (stacked on CORE-1092); based off jeremy/integration-mars.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Orion",
+      "release": "Orion",
+      "tier": "Fix",
+      "id": "CORE-1460",
+      "title": "IDOR DENY-audit sweep",
+      "description": "Added structured DENY audit on transcript-write + session-comment gates + two-org cross-tenant test suite.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "PR #509 -> mars; based off jeremy/integration-mars.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Orion",
+      "release": "Orion",
+      "tier": "Feature",
+      "id": "CORE-476",
+      "title": "Cold-storage archive before hard-delete",
+      "description": "Archive de-identified rows (never raw audio) to GCS WORM before hard-delete.",
+      "linear_status": "Deferred",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Reviving PR #127; stacked on CORE-1102 (after it merges).",
+      "effective_status": "Deferred",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Neptune",
+      "tier": "Epic",
+      "id": "CORE-1227",
+      "title": "Neptune \u2014 SaaS Licensing Model overhaul",
+      "description": "Phased licensing-model overhaul (see Tab 1 Neptune row for phase detail).",
+      "linear_status": "In Progress",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Committed to Orion scope 2026-06-30; Phase 0 in review. See CORE-1228..1236, 1644, 1261, 1353, 1462, 1463 for phase/slice detail.",
+      "effective_status": "In Progress",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Orion",
+      "tier": "Feature",
+      "id": "CORE-1389",
+      "title": "Magento transcription connector",
+      "description": "Inbound push endpoints so Magento submits transcription requests and queries status, correlated by Magento-supplied ref.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Sub-tasks CORE-1610, CORE-1611; no PR yet \u2014 scheduled/scope commitment.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Pluto",
+      "tier": "Fix",
+      "id": "CORE-1294",
+      "title": "Shareable invite link Copy in table (landed in base)",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "Merged to master via Pluto; already in release/orion base \u2014 don't re-merge. Listed here for release traceability.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Orion",
+      "release": "Pluto",
+      "tier": "Fix",
+      "id": "CORE-1298",
+      "title": "Admin license-quantity 409 mislabel (landed in base)",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": true,
+        "staging": true,
+        "master": true
+      },
+      "in_integration_branch": true,
+      "notes": "Merged to master via Pluto; already in release/orion base \u2014 don't re-merge.",
+      "effective_status": "Done",
+      "stale": true
+    },
+    {
+      "major": "Orion",
+      "release": "Orion",
+      "tier": "Fix",
+      "id": "CORE-1067",
+      "title": "Audio upload fails (HTTP 403) \u2014 transcribe job stranded",
+      "description": "Session audio upload returns 403; transcribe job row created but blob never uploads.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Fix pending \u2014 no PR.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Orion",
+      "tier": "Fix",
+      "id": "CORE-1064",
+      "title": "First-run wizard can't bootstrap admin on a fresh instance",
+      "description": "FK to missing Cobalt org + unmapped email-unique violation block creating any site admin.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Fix pending \u2014 no PR. Compliance-sensitive.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Orion",
+      "tier": "Fix",
+      "id": "CORE-763",
+      "title": "Infra hardening \u2014 rate-limiter leak, ctx cancel, demo-cookie Secure, XFF",
+      "description": "Rate-limiter cleanup goroutine leak, sync ctx cancellation, demo cookie Secure, XFF spoofing.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Fix pending \u2014 no PR. Three fixable now; XFF pending infra topology.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Orion",
+      "tier": "Fix",
+      "id": "CORE-762",
+      "title": "Billing N+1 + swallowed errors in subscription lookups",
+      "description": "N+1 CountAssignedSeats per row in ListOrgSubscriptions; swallowed errors in subscription lookups.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Fix pending \u2014 no PR.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Bull",
+      "tier": "Fix",
+      "id": "CORE-1598",
+      "title": "Convention editor: cannot paste text into the editor",
+      "description": "Paste (Cmd/Ctrl+V) into the ProseMirror-based convention editor was a no-op.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "PR #529, merged into guillermo/integration-bull; bull not yet merged into release/orion.",
+      "effective_status": "In Review",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Bull",
+      "tier": "Fix",
+      "id": "CORE-1597",
+      "title": "Transcriber portal: editor editable before transcription job completes",
+      "description": "Transcriber editor must be read-only until ASR job completes.",
+      "linear_status": "In Review",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "PR #532, merged into guillermo/integration-bull; bull not yet merged into release/orion.",
+      "effective_status": "In Review",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Orion",
+      "tier": "Fix",
+      "id": "CORE-1632",
+      "title": "Transcriber portal: only shows selected org's queue (cross-org visibility blocked by RLS)",
+      "description": "Transcriber/reviewer queue is org-scoped; internal transcribers see only one org at a time.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Fix pending \u2014 no PR. Compliance-sensitive (cross-tenant student PII).",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Bull",
+      "tier": "Fix",
+      "id": "CORE-1601",
+      "title": "Route self-serve draft completion to the editor",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Merged into guillermo/integration-bull (PRs #529-#538); not yet in any long-lived branch \u2014 lands only via bundle -> release/orion promotion.",
+      "effective_status": "In Review",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Bull",
+      "tier": "Fix",
+      "id": "CORE-1603",
+      "title": "Convention editor: 'View original' shows the machine draft",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Merged into guillermo/integration-bull (PRs #529-#538); not yet in any long-lived branch \u2014 lands only via bundle -> release/orion promotion.",
+      "effective_status": "In Review",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Bull",
+      "tier": "Fix",
+      "id": "CORE-1382",
+      "title": "Spice: cap Create Goal target-date year at 4 digits",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Merged into guillermo/integration-bull (PRs #529-#538); not yet in any long-lived branch \u2014 lands only via bundle -> release/orion promotion.",
+      "effective_status": "In Review",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Bull",
+      "tier": "Fix",
+      "id": "CORE-1600",
+      "title": "D/M/Y birthday picker so DOB day is selectable",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Merged into guillermo/integration-bull (PRs #529-#538); not yet in any long-lived branch \u2014 lands only via bundle -> release/orion promotion.",
+      "effective_status": "In Review",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Bull",
+      "tier": "Fix",
+      "id": "CORE-1439",
+      "title": "Clarify transcriber dashboard time-in-state column",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Merged into guillermo/integration-bull (PRs #529-#538); not yet in any long-lived branch \u2014 lands only via bundle -> release/orion promotion.",
+      "effective_status": "In Review",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Bull",
+      "tier": "Fix",
+      "id": "CORE-1548",
+      "title": "Keep autofilled inputs on-theme in dark mode",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Merged into guillermo/integration-bull (PRs #529-#538); not yet in any long-lived branch \u2014 lands only via bundle -> release/orion promotion.",
+      "effective_status": "In Review",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Bull",
+      "tier": "Feature",
+      "id": "CORE-1605",
+      "title": "Convention editor: detach + resume for Apply-Conventions-with-AI",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Merged into guillermo/integration-bull (PRs #529-#538); not yet in any long-lived branch \u2014 lands only via bundle -> release/orion promotion.",
+      "effective_status": "In Review",
+      "stale": false
+    },
+    {
+      "major": "Orion",
+      "release": "Bull",
+      "tier": "Fix",
+      "id": "CORE-1559",
+      "title": "SALT caseload: show age from session stats when DOB absent",
+      "description": "",
+      "linear_status": "In Review",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "Merged into guillermo/integration-bull (PRs #529-#538); not yet in any long-lived branch \u2014 lands only via bundle -> release/orion promotion.",
+      "effective_status": "In Review",
+      "stale": false
+    },
+    {
+      "major": "Rust",
+      "release": "Rust",
+      "tier": "Feature",
+      "id": "CORE-823",
+      "title": "perf(cache): shared Redis cache for RBAC + feature-flag hot paths",
+      "description": "GCP Memorystore (BASIC dev/staging, STANDARD_HA prod), private IP, AUTH+TLS, Secret Manager.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "spice-rack PR #299 + gcp-infrastructure PR #43 moved out of draft; integration branch not yet cut.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Transcriber Portal 1.1",
+      "release": "Transcriber Portal 1.1",
+      "tier": "Foundation",
+      "id": "CORE-1614",
+      "title": "F0 \u2014 Persona RBAC & role boundaries",
+      "description": "Component of the SALT company/ops dashboards spec (CORE-1276), decomposed rocks/pebbles/sand.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "No PR yet.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Transcriber Portal 1.1",
+      "release": "Transcriber Portal 1.1",
+      "tier": "Foundation",
+      "id": "CORE-1615",
+      "title": "F1 \u2014 Ops app shell (route group, nav, persona switcher, dashboard scaffold)",
+      "description": "Component of the SALT company/ops dashboards spec (CORE-1276), decomposed rocks/pebbles/sand.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "No PR yet.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Transcriber Portal 1.1",
+      "release": "Transcriber Portal 1.1",
+      "tier": "Rock",
+      "id": "CORE-1616",
+      "title": "R1 \u2014 Queue Manager (human transcriber ops)",
+      "description": "Component of the SALT company/ops dashboards spec (CORE-1276), decomposed rocks/pebbles/sand.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "No PR yet.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Transcriber Portal 1.1",
+      "release": "Transcriber Portal 1.1",
+      "tier": "Rock",
+      "id": "CORE-1617",
+      "title": "R2 \u2014 Timesheet + punch-clock",
+      "description": "Component of the SALT company/ops dashboards spec (CORE-1276), decomposed rocks/pebbles/sand.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "No PR yet.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Transcriber Portal 1.1",
+      "release": "Transcriber Portal 1.1",
+      "tier": "Rock",
+      "id": "CORE-1618",
+      "title": "R3 \u2014 Payroll",
+      "description": "Component of the SALT company/ops dashboards spec (CORE-1276), decomposed rocks/pebbles/sand.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "No PR yet.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Transcriber Portal 1.1",
+      "release": "Transcriber Portal 1.1",
+      "tier": "Rock",
+      "id": "CORE-1619",
+      "title": "R4 \u2014 Billing & Revenue B2B",
+      "description": "Component of the SALT company/ops dashboards spec (CORE-1276), decomposed rocks/pebbles/sand.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "No PR yet.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Transcriber Portal 1.1",
+      "release": "Transcriber Portal 1.1",
+      "tier": "Pebble",
+      "id": "CORE-1620",
+      "title": "P1 \u2014 Transcriber Management",
+      "description": "Component of the SALT company/ops dashboards spec (CORE-1276), decomposed rocks/pebbles/sand.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "No PR yet.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Transcriber Portal 1.1",
+      "release": "Transcriber Portal 1.1",
+      "tier": "Pebble",
+      "id": "CORE-1621",
+      "title": "P2 \u2014 Transcriber (Maria) portal polish",
+      "description": "Component of the SALT company/ops dashboards spec (CORE-1276), decomposed rocks/pebbles/sand.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "No PR yet.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Transcriber Portal 1.1",
+      "release": "Transcriber Portal 1.1",
+      "tier": "Pebble",
+      "id": "CORE-1622",
+      "title": "P3 \u2014 People / HR + performance reviews",
+      "description": "Component of the SALT company/ops dashboards spec (CORE-1276), decomposed rocks/pebbles/sand.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "No PR yet.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Transcriber Portal 1.1",
+      "release": "Transcriber Portal 1.1",
+      "tier": "Pebble",
+      "id": "CORE-1625",
+      "title": "P4 \u2014 Team Messaging",
+      "description": "Component of the SALT company/ops dashboards spec (CORE-1276), decomposed rocks/pebbles/sand.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "No PR yet.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Transcriber Portal 1.1",
+      "release": "Transcriber Portal 1.1",
+      "tier": "Pebble",
+      "id": "CORE-1624",
+      "title": "P5 \u2014 Exports (role-filtered reports)",
+      "description": "Component of the SALT company/ops dashboards spec (CORE-1276), decomposed rocks/pebbles/sand.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "No PR yet.",
+      "effective_status": "Backlog",
+      "stale": false
+    },
+    {
+      "major": "Transcriber Portal 1.1",
+      "release": "Transcriber Portal 1.1",
+      "tier": "Sand",
+      "id": "CORE-1626",
+      "title": "Portal chrome & polish (Accounts & Access, Audit, Settings, Help)",
+      "description": "Component of the SALT company/ops dashboards spec (CORE-1276), decomposed rocks/pebbles/sand.",
+      "linear_status": "Backlog",
+      "env": {
+        "dev": false,
+        "staging": false,
+        "master": false
+      },
+      "in_integration_branch": false,
+      "notes": "No PR yet.",
+      "effective_status": "Backlog",
+      "stale": false
+    }
+  ],
+  "not_in_a_release": [
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1134",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1134/verify-frontend-vertex-path-fails-closed-bring-its-config-under-source",
+      "status": "In Progress",
+      "priority": "Urgent",
+      "project": "HIPAA/FERPA/COPPA Audit Remediation",
+      "assignee": "Alok Parlikar",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Verify frontend Vertex path fails closed + bring its config under source control"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1318",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1318/uiux-feedback-from-karen-6326-and-joelle",
+      "status": "Todo",
+      "priority": "Urgent",
+      "project": "SALT: UI/UX Design",
+      "assignee": "Ashley Ippolito",
+      "parent": "(none)",
+      "labels": [],
+      "title": "UI/UX Feedback from Karen (6/3/26) & Joelle"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1495",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1495/principal-engineer-phase-1-rbac-logic-blockers-b1-sec1-b2",
+      "status": "In Progress",
+      "priority": "Urgent",
+      "project": "MARS Audit Remediation (2026-06-28)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "[principal-engineer] Phase 1 \u2014 RBAC logic blockers (B1, SEC1, B2)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-684",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-684/redesign-salt-website",
+      "status": "Todo",
+      "priority": "Urgent",
+      "project": "Levi/Ashley Product Management",
+      "assignee": "Levi Wilson",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Redesign SALT Website"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-687",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-687/create-3-frontend-mockups-and-gather-team-feedback",
+      "status": "Todo",
+      "priority": "Urgent",
+      "project": "Levi/Ashley Product Management",
+      "assignee": "Levi Wilson",
+      "parent": "CORE-684",
+      "labels": [],
+      "title": "Create 3 frontend mockups and gather team feedback"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-688",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-688/connect-approved-mockup-to-backend-on-the-cloned-site",
+      "status": "Todo",
+      "priority": "Urgent",
+      "project": "Levi/Ashley Product Management",
+      "assignee": "Levi Wilson",
+      "parent": "CORE-684",
+      "labels": [],
+      "title": "Connect approved mockup to backend on the cloned site"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-689",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-689/deploy-redesigned-website-live",
+      "status": "Todo",
+      "priority": "Urgent",
+      "project": "Levi/Ashley Product Management",
+      "assignee": "Levi Wilson",
+      "parent": "CORE-684",
+      "labels": [],
+      "title": "Deploy redesigned website live"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1065",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1065/unable-to-add-edit-update-or-switch-organization-only-one-org-can-be",
+      "status": "In QA",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "Bug",
+        "SALT"
+      ],
+      "title": "Unable to add, edit/ update, or switch organization \u2014 only one org can be created with no management options"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1066",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1066/onboarding-org-creation-fails-with-failed-to-register-user-error",
+      "status": "In QA",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-1065",
+      "labels": [
+        "Bug",
+        "SALT"
+      ],
+      "title": "Onboarding org creation fails with \"failed to register user\" error"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1068",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1068/transcription-editor-audio-waveform-stuck-on-loading-waveform-and-no",
+      "status": "In QA",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-1065",
+      "labels": [
+        "SALT",
+        "Bug"
+      ],
+      "title": "Transcription editor \u2014 audio waveform stuck on \"Loading waveform...\" and no transcript utterances appear"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1069",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1069/salt-analysis-report-shows-all-zero-metrics-no-data-computed-due-to",
+      "status": "Todo",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "(unassigned)",
+      "parent": "CORE-1065",
+      "labels": [
+        "SALT",
+        "Bug"
+      ],
+      "title": "SALT Analysis Report shows all-zero metrics \u2014 no data computed due to empty transcript"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1070",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1070/speaker-goal-creation-fails-create-goal-modal-submits-but-goal-is-not",
+      "status": "In QA",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "(unassigned)",
+      "parent": "CORE-1065",
+      "labels": [
+        "Bug",
+        "SALT"
+      ],
+      "title": "Speaker goal creation fails \u2014 \"Create Goal\" modal submits but goal is not saved"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1071",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1071/subscription-plan-not-updated-after-payment-shows-free-account-despite",
+      "status": "Todo",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "(unassigned)",
+      "parent": "CORE-1065",
+      "labels": [
+        "SALT",
+        "Bug"
+      ],
+      "title": "Subscription plan not updated after payment \u2014 shows Free Account despite subscribing to Clinician/Researcher ($49/seat)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1072",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1072/guided-tour-breaks-after-step-8-in-demo-mode-http-401-not-authorized",
+      "status": "In QA",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "(unassigned)",
+      "parent": "CORE-1065",
+      "labels": [
+        "SALT",
+        "Bug"
+      ],
+      "title": "Guided tour breaks after Step 8 in Demo mode \u2014 HTTP 401 \"Not authorized to view this session\" for demo-session-1"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1073",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1073/add-speaker-fails-failed-to-create-speaker-please-try-again-error-on",
+      "status": "Todo",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "(unassigned)",
+      "parent": "CORE-1065",
+      "labels": [
+        "Bug",
+        "SALT"
+      ],
+      "title": "Add Speaker fails \u2014 \"Failed to create speaker. Please try again.\" error on submission"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1110",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1110/p1-13-confirm-the-1-no-mfa-workspace-user-is-a-bot-mfa-on-all-humans",
+      "status": "In Progress",
+      "priority": "High",
+      "project": "HIPAA/FERPA/COPPA Audit Remediation",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "P1-13 \u2014 Confirm the 1 no-MFA Workspace user is a bot; MFA on all humans"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1150",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1150/bug-both-transcribe-paths-dead-end-in-403-license-required-on-post",
+      "status": "In QA",
+      "priority": "High",
+      "project": "SALT: Web App Core",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Bug: Both transcribe paths dead-end in 403 license_required on POST /api/salt/jobs (\"Included in plan\" badge contradicts it)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1244",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1244/convention-editor-gates-ai-features-on-transcriberaccess-transcriber",
+      "status": "In QA",
+      "priority": "High",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Convention editor gates AI features on `transcriber.access` / Transcriber role that RBAC migration removed"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1246",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1246/salt-saas-postgres-tier-roles-via-noinherit-gated-set-role-gateway",
+      "status": "Todo",
+      "priority": "High",
+      "project": "Security & Identity Hardening",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Salt-saas Postgres tier roles via NOINHERIT-gated SET ROLE gateway"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1276",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1276/salt-company-dashboards-frozen-v2-ready-for-implementation",
+      "status": "Todo",
+      "priority": "High",
+      "project": "SALT: UI/UX Design",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "SALT Company Dashboards \u2014 Frozen v2 Ready for Implementation"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1278",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1278/salt-company-dashboard-salt-transcriber-implementation-spec",
+      "status": "Todo",
+      "priority": "High",
+      "project": "SALT: UI/UX Design",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-1276",
+      "labels": [],
+      "title": "SALT Company Dashboard \u2014 SALT Transcriber Implementation Spec"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1279",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1279/salt-company-dashboard-transcription-admin-implementation-spec",
+      "status": "Todo",
+      "priority": "High",
+      "project": "SALT: UI/UX Design",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-1276",
+      "labels": [],
+      "title": "SALT Company Dashboard \u2014 Transcription Admin Implementation Spec"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1302",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1302/salt-self-serve-transcribe-session-owner-gets-403-on-own-job-audio",
+      "status": "In QA",
+      "priority": "High",
+      "project": "SALT: Web App Core",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "SALT",
+        "Bug"
+      ],
+      "title": "Salt self-serve transcribe: session owner gets 403 on own job audio + segments (waveform never loads)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1496",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1496/principal-engineer-phase-2-critical-guards-and-auth-api1-sec2-b4",
+      "status": "In Progress",
+      "priority": "High",
+      "project": "MARS Audit Remediation (2026-06-28)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "[principal-engineer] Phase 2 \u2014 Critical guards & auth (API1, SEC2, B4)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1497",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1497/solution-architectprincipal-engineer-phase-3-schema-and-migration",
+      "status": "In Progress",
+      "priority": "High",
+      "project": "MARS Audit Remediation (2026-06-28)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "[solution-architect\u2192principal-engineer] Phase 3 \u2014 Schema & migration safety (S1, S2, S3, S5)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1558",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1558/salt-transcription-submission-modal-traps-scroll-and-blocks-navigation",
+      "status": "In QA",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "Bug",
+        "SALT"
+      ],
+      "title": "SALT: Transcription submission modal traps scroll and blocks navigation"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1594",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1594/salt-saas-devstaging-bump-cloud-sql-tier-db-f1-micro-db-g1-small-db",
+      "status": "In QA",
+      "priority": "High",
+      "project": "SALT: Infrastructure and Deployment",
+      "assignee": "Alok Parlikar",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "salt-saas dev/staging: bump Cloud SQL tier db-f1-micro \u2192 db-g1-small (DB connection exhaustion breaking backend deploys)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-262",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-262/epic-salt-saas-direction-change-shared-transcript-editor-capability",
+      "status": "In Progress",
+      "priority": "High",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Epic: SALT SaaS Direction Change \u2014 Shared Transcript Editor (Capability-Gated) + Two-Path Session Model"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-434",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-434/websocket-connection-error-observed-on-safari-during-audio",
+      "status": "Todo",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [
+        "Bug",
+        "SALT"
+      ],
+      "title": "WebSocket Connection Error Observed on Safari During Audio Transcription"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-506",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-506/add-transcription-salt-convention-steps-between-audio-upload-and",
+      "status": "Todo",
+      "priority": "High",
+      "project": "SALT: Web App Core",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "Add transcription \u2192 SALT convention steps between audio upload and scores"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-526",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-526/p1-t1-add-transcription-mode-to-jobssessions-schema",
+      "status": "Todo",
+      "priority": "High",
+      "project": "SALT: Backend Architecture & API",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P1-T1: Add `transcription_mode` to jobs/sessions schema"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-527",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-527/p1-t2-session-creation-ux-explicit-fork-ill-transcribe-vs-transcribe",
+      "status": "Todo",
+      "priority": "High",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P1-T2: Session-creation UX \u2014 explicit fork \"I'll transcribe\" vs. \"Transcribe for me\""
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-528",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-528/p1-t3-unit-test-framework-setup-for-appfrontend",
+      "status": "Todo",
+      "priority": "High",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P1-T3: Unit-test framework setup for `app/frontend/`"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-529",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-529/p1-t4-shared-editor-extract-capabilities-prop-on-conventioneditor",
+      "status": "Todo",
+      "priority": "High",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P1-T4: Shared editor \u2014 extract `capabilities` prop on `ConventionEditor`"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-530",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-530/p1-t5-clinician-session-page-wire-the-shared-editor-into",
+      "status": "Todo",
+      "priority": "High",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P1-T5: Clinician session page \u2014 wire the shared editor into `/salt/sessions/[id]`"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-531",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-531/p1-t6-transcriber-portal-pass-ai-enabled-capabilities-to",
+      "status": "Todo",
+      "priority": "High",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P1-T6: Transcriber portal \u2014 pass AI-enabled capabilities to `ConventionEditor`"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-532",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-532/p1-t7-transcription-assist-surface-mvp-toolbar-tooltips-context-menus",
+      "status": "Todo",
+      "priority": "High",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P1-T7: Transcription-assist surface (MVP) \u2014 toolbar, tooltips, context menus, keyboard"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-533",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-533/p1-t8-editor-time-tracking-30s-heartbeat",
+      "status": "Todo",
+      "priority": "High",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P1-T8: Editor time-tracking \u2014 30s heartbeat"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-534",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-534/p1-t9-e2e-unit-test-sweep-for-both-transcription-paths",
+      "status": "Todo",
+      "priority": "High",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P1-T9: E2E + unit-test sweep for both transcription paths"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-589",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-589/transcriber-time-tracking-afk-aware-extension-of-editor-heartbeat",
+      "status": "In QA",
+      "priority": "High",
+      "project": "SALT: Web App Core",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-830",
+      "labels": [],
+      "title": "Transcriber time tracking \u2014 AFK-aware extension of editor heartbeat"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-620",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-620/m4a-audio-upload-failure",
+      "status": "Todo",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [
+        "Bug"
+      ],
+      "title": ".m4a Audio Upload failure"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-648",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-648/transcriber-editor-audio-player-port-productivity-features-from",
+      "status": "In QA",
+      "priority": "High",
+      "project": "SALT: Web App Core",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-829",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Transcriber editor audio player \u2014 port productivity features from Shahruk's first iteration"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-662",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-662/saltdatabase-unit-tests-fail-on-clean-postgres-because-session",
+      "status": "In QA",
+      "priority": "High",
+      "project": "SALT: Backend Architecture & API",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Bug"
+      ],
+      "title": "salt/database unit tests fail on clean Postgres because SESSION_DATABASE_URL points at cobalt_app, not postgres superuser"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-811",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-811/bug-salt-reports-page-showing-0-for-all-measurements",
+      "status": "In QA",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "Bug",
+        "SALT"
+      ],
+      "title": "[Bug] SALT Reports page showing 0 for all measurements"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-812",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-812/bug-failed-to-create-new-speaker",
+      "status": "In QA",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "Bug",
+        "SALT"
+      ],
+      "title": "[Bug] Failed to create new speaker"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-813",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-813/bug-audio-stuck-in-processing-transcription-never-completes",
+      "status": "In QA",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "Bug",
+        "SALT"
+      ],
+      "title": "[Bug] Audio stuck in processing \u2014 transcription never completes"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-814",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-814/bug-goal-not-being-created-when-using-add-goal",
+      "status": "In QA",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "Bug",
+        "SALT"
+      ],
+      "title": "[Bug] Goal not being created when using Add Goal"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-815",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-815/bug-microphone-permission-denied-error-shown-even-when-microphone-is",
+      "status": "In QA",
+      "priority": "High",
+      "project": "QA for GTM",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "Bug",
+        "SALT"
+      ],
+      "title": "[Bug] \"Microphone permission denied\" error shown even when microphone is enabled in browser"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1074",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1074/user-trapped-in-org-creation-loop-failed-to-register-user-prevents",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "QA for GTM",
+      "assignee": "(unassigned)",
+      "parent": "CORE-1065",
+      "labels": [
+        "Bug",
+        "SALT"
+      ],
+      "title": "User trapped in org creation loop \u2014 \"failed to register user\" prevents navigation to home/dashboard and blocks sign-out"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1086",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1086/phase-6-alerting-andamp-detection",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "Security & Identity Hardening",
+      "assignee": "Alok Parlikar",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Phase 6 \u2014 Alerting &amp; detection"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1119",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1119/p2-1-per-schema-db-credentials-or-correct-the-docs-claim",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "HIPAA/FERPA/COPPA Audit Remediation",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "P2-1 \u2014 Per-schema DB credentials (or correct the docs' claim)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1178",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1178/birthday-year-field-allows-more-than-4-digits-invalid-chronological",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "QA for GTM",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-1065",
+      "labels": [
+        "SALT",
+        "Bug"
+      ],
+      "title": "Birthday year field allows more than 4 digits \u2014 invalid chronological age calculation"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1202",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1202/migrate-published-s3-pipeline-configs-to-the-graph-format-components",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Migrate published S3 pipeline configs to the graph format (components + connections)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1214",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1214/design-the-caseload-page-extensible-tracking-hub",
+      "status": "In Progress",
+      "priority": "Medium",
+      "project": "SALT: UI/UX Design",
+      "assignee": "Ashley Ippolito",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Design the Caseload page \u2014 extensible tracking hub"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1215",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1215/reports-redesign-concepts-for-a-simplified-progressive-disclosure",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "SALT: UI/UX Design",
+      "assignee": "Levi Wilson",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Reports redesign \u2014 concepts for a simplified, progressive-disclosure reports experience"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1218",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1218/mock-up-the-multilingual-assessment-flow-editor-behavior",
+      "status": "In Progress",
+      "priority": "Medium",
+      "project": "SALT: UI/UX Design",
+      "assignee": "Levi Wilson",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Mock up the Multilingual Assessment flow + editor behavior"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1240",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1240/salt-new-session-show-an-uploading-please-wait-indicator-during-audio",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "SALT: Web App Core",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-550",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "Salt new-session: show an \"uploading, please wait\" indicator during audio upload"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1509",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1509/pam-gate-operator-access-to-salt-saas-phi-gcs-buckets-no-standing",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "Security & Identity Hardening",
+      "assignee": "Alok Parlikar",
+      "parent": "(none)",
+      "labels": [],
+      "title": "PAM-gate operator access to salt-saas PHI GCS buckets (no standing object read)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1519",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1519/remove-dead-prepaid-wallet-code-in-sharedbilling-transcription",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "MARS Audit Remediation (2026-06-28)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Remove dead prepaid-wallet code in shared/billing transcription services (post CORE-1441)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1542",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1542/re-dashboard-with-notifications",
+      "status": "In Progress",
+      "priority": "Medium",
+      "project": "SALT: UI/UX Design",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "RE: Dashboard with Notifications"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-521",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-521/featorg-orgadmin-self-serve-member-management-settingsteam",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "SALT: Web App Core",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "feat(org): OrgAdmin self-serve member management (/settings/team)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-539",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-539/p2-t5-transcription-assist-toolbar-full-salt-code-palette",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P2-T5: Transcription-assist toolbar \u2014 full SALT code palette"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-649",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-649/transcription-editor-line-numbers-cursor-position-footer-and-required",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "SALT: Web App Core",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-262",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Transcription editor \u2014 line numbers, cursor-position footer, and required Chronological Age gate"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-540",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-540/p3-t1-session-linking-side-by-side-scorereport-comparison",
+      "status": "Todo",
+      "priority": "Low",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P3-T1: Session Linking \u2014 side-by-side score/report comparison"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-541",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-541/p3-t2-print-from-editor",
+      "status": "Todo",
+      "priority": "Low",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P3-T2: Print from Editor"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-542",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-542/p3-t3-sltdb-parser-go-supporting-format-parsers-slt-cha-sd1",
+      "status": "Todo",
+      "priority": "Low",
+      "project": "SALT: Backend Architecture & API",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P3-T3: `.sltdb` parser (Go) + supporting format parsers (`.slt`, `.cha`, `.sd1`)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-543",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-543/p3-t4-bulk-import-single-file-and-folder-upload-endpoints",
+      "status": "Todo",
+      "priority": "Low",
+      "project": "SALT: Backend Architecture & API",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P3-T4: Bulk import \u2014 single-file and folder upload endpoints"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-544",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-544/p3-t5-import-ux-interactive-user-mapping-wizard",
+      "status": "Todo",
+      "priority": "Low",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P3-T5: Import UX \u2014 interactive user-mapping wizard"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-545",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-545/p3-t6-tools-menu-keyboard-activation-simple-comparative-database",
+      "status": "Todo",
+      "priority": "Low",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "CORE-262",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "P3-T6: Tools menu \u2014 keyboard activation + simple comparative-database creation"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1179",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1179/test-alternative-gemini-prompts-for-salt-annotation-modeling",
+      "status": "In Progress",
+      "priority": "No priority",
+      "project": "SALT: Metrics & Scoring Engine",
+      "assignee": "Jeff Lilly",
+      "parent": "(none)",
+      "labels": [
+        "Experiment",
+        "salt-modeling"
+      ],
+      "title": "Test alternative Gemini prompts for SALT annotation modeling"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-139",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-139/improve-diarization-in-salt-transcripts-priority-1",
+      "status": "In Progress",
+      "priority": "No priority",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "arif@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "SALT",
+        "salt-modeling"
+      ],
+      "title": "Improve diarization in SALT transcripts (priority 1)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-140",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-140/prepare-and-sanitize-salt-training-dataset",
+      "status": "In Progress",
+      "priority": "No priority",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "Cenk Demiroglu",
+      "parent": "(none)",
+      "labels": [
+        "SALT",
+        "salt-modeling"
+      ],
+      "title": "Prepare & Sanitize SALT Training Dataset"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-142",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-142/adapt-a-parakeet-model-with-salt-data",
+      "status": "In Progress",
+      "priority": "No priority",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "Cenk Demiroglu",
+      "parent": "(none)",
+      "labels": [
+        "SALT",
+        "salt-modeling"
+      ],
+      "title": "Adapt a Parakeet Model with SALT data"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1520",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1520/include-alternate-word-choices-in-fuserdecoder-output",
+      "status": "In Progress",
+      "priority": "No priority",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "stan@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "SALT",
+        "salt-modeling"
+      ],
+      "title": "Include alternate word choices in FuserDecoder output"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1524",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1524/trim-salt-traintest-data",
+      "status": "In Progress",
+      "priority": "No priority",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "stan@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "SALT"
+      ],
+      "title": "Trim SALT train/test data"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1525",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1525/neural-c-unit-segmenter-acoustic-aware-timing-features-from-asr",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "SALT"
+      ],
+      "title": "Neural C-unit segmenter: acoustic-aware (timing features from ASR timestamps)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1526",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1526/neural-eos-mark-punctuator-converter-drop-in-for-rule-based-punctuator",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "SALT"
+      ],
+      "title": "Neural EOS-mark punctuator converter (drop-in for rule-based punctuator)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1527",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1527/errorcodeinserterdeberta-converter-deberta-error-codeomission-tagger",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "SALT"
+      ],
+      "title": "ErrorCodeInserterDeberta converter (DeBERTa error-code/omission tagger)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1528",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1528/transcribe-traindev-sets-with-gemini-for-downstream-component-training",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "SALT"
+      ],
+      "title": "Transcribe Train/Dev sets with Gemini for downstream component training"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1529",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1529/verb-tagging-for-percentutts-with-verbs-audit-salt-scorer-add-to",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Metrics & Scoring Engine",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "SALT"
+      ],
+      "title": "Verb tagging for %Utts-with-Verbs \u2014 audit salt-scorer, add to conventions pipeline if missing"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1530",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1530/move-modeling-code-from-saltier-worker-to-saltier-training-git-filter",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Infrastructure and Deployment",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "SALT"
+      ],
+      "title": "Move modeling code from saltier-worker to saltier-training (git-filter export with history)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1531",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1531/build-model-bundle-in-flakenix-from-individually-archived-models",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "SALT: Infrastructure and Deployment",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "SALT"
+      ],
+      "title": "Build model-bundle in flake.nix from individually-archived models"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1532",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1532/modeling-docs-hub-dataset-path-registry-results-leaderboard",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Infrastructure and Deployment",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "SALT"
+      ],
+      "title": "Modeling docs hub: dataset-path registry + results leaderboard"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1533",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1533/determine-model-acceptance-criteria-with-karen-and-team",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Metrics & Scoring Engine",
+      "assignee": "Alok Parlikar",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "SALT"
+      ],
+      "title": "Determine Model Acceptance Criteria (with Karen & team)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1534",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1534/dashboard-convention-pipeline-component-f1-accuracy-metrics",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Metrics & Scoring Engine",
+      "assignee": "Jeff Lilly",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "SALT"
+      ],
+      "title": "Dashboard: convention-pipeline component F1 / accuracy metrics"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-1535",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1535/warn-user-before-applying-ai-conventions-over-manual-transcript-edits",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "SALT: Web App Core",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "Feature",
+        "SALT"
+      ],
+      "title": "Warn user before applying AI conventions over manual transcript edits (undo risk)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-219",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-219/review-db-schema",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Backend Architecture & API",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Review DB Schema"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-230",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-230/verify-endpoints-use-rbac",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "SALT: Backend Architecture & API",
+      "assignee": "Penpicha Sangsanga",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Verify endpoints use RBAC"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-243",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-243/implement-dead-letter-queue-dlq-for-corrupt-files",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Backend Architecture & API",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Implement Dead Letter Queue (DLQ) for Corrupt Files"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-436",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-436/add-other-end-of-utterance-punctuation-priority-8",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Add other end of utterance punctuation ! > ^ ~ (Priority 8)"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-444",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-444/generate-and-review-api-spec",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Backend Architecture & API",
+      "assignee": "Penpicha Sangsanga",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Generate and Review API Spec"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-448",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-448/create-test-suite-for-end-to-end-salt-metrics",
+      "status": "In Progress",
+      "priority": "No priority",
+      "project": "SALT: Metrics & Scoring Engine",
+      "assignee": "arif@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "SALT",
+        "salt-modeling"
+      ],
+      "title": "Create test suite for end to end Salt Metrics"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-474",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-474/featsalt-real-time-mode-flag-per-org-quota-enforcement",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "SALT: Web App Core",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "feat(salt): real-time mode flag + per-org quota enforcement"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-486",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-486/qa-deployed-demo-end-to-end-walkthrough-and-bug-triage",
+      "status": "In Progress",
+      "priority": "No priority",
+      "project": "SALT: Web App Core",
+      "assignee": "pooja@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "QA deployed demo: end-to-end walkthrough and bug triage"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-494",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-494/add-remotion-videos-as-guides",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Web App Core",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Add Remotion videos as guides"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-498",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-498/orgs-need-a-baa",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "SALT: Web App Core",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Orgs need a BAA"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-500",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-500/update-model-in-salt-transcriber-deployment",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Infrastructure and Deployment",
+      "assignee": "Shahruk Hossain",
+      "parent": "CORE-626",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Update model in salt-transcriber deployment"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-501",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-501/remove-redundant-example-pipeline-configs-in-saltier",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Remove redundant example pipeline configs in saltier"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-502",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-502/fix-salt-pipeline-archives-on-s3",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Infrastructure and Deployment",
+      "assignee": "Shahruk Hossain",
+      "parent": "CORE-626",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Fix SALT pipeline archives on S3"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-576",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-576/validate-parakeet-timestamp-accuracy",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "stan@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "SALT",
+        "salt-modeling"
+      ],
+      "title": "Validate Parakeet timestamp accuracy"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-577",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-577/re-calibrate-unintelligible-segment-detector-using-parakeet-confidence",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "stan@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Feature",
+        "SALT",
+        "salt-modeling"
+      ],
+      "title": "Re-calibrate unintelligible segment detector using Parakeet confidence scores"
+    },
+    {
+      "area": "SALT / SaaS product",
+      "id": "CORE-580",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-580/remove-invalid-and-empty-files-from-test-and-dev-sets",
+      "status": "In Progress",
+      "priority": "No priority",
+      "project": "SALT: Transcription Pipeline",
+      "assignee": "stan@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "SALT",
+        "salt-modeling"
+      ],
+      "title": "Remove invalid and empty files from test and dev sets"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1031",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1031/initialize-github-repository-and-project-directory-structure",
+      "status": "Todo",
+      "priority": "Urgent",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Initialize GitHub repository and project directory structure"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1032",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1032/start-postgresql-via-docker-compose-and-configure-environment",
+      "status": "Todo",
+      "priority": "Urgent",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Start PostgreSQL via Docker Compose and configure environment"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1033",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1033/install-ffmpeg-on-development-machine",
+      "status": "Todo",
+      "priority": "Urgent",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Install ffmpeg on development machine"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1034",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1034/set-up-go-module-install-dependencies-and-run-database-migrations",
+      "status": "Todo",
+      "priority": "Urgent",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Set up Go module, install dependencies, and run database migrations"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1035",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1035/set-up-python-virtual-environment-and-install-mixer-dependencies",
+      "status": "Todo",
+      "priority": "Urgent",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Set up Python virtual environment and install mixer dependencies"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1047",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1047/push-all-scaffolded-code-to-github-repository",
+      "status": "Todo",
+      "priority": "Urgent",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Push all scaffolded code to GitHub repository"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1583",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1583/customer-1-flip-the-camera-maps-to-recording-command-should-be-scope",
+      "status": "In Review",
+      "priority": "Urgent",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "Customer #1: \"flip the camera\" maps to recording command (should be scope_flip)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1586",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1586/customer-4-set-brightness-to-high-command-param-empty-level-mode-vs",
+      "status": "In Review",
+      "priority": "Urgent",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "Customer #4: \"Set brightness to high\" \u2014 command param empty (level_mode vs brightness_mode mismatch)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1588",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1588/customer-6-critical-set-insufflator-pressure-maps-to-insufflator-start",
+      "status": "In Review",
+      "priority": "Urgent",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "Customer #6 (CRITICAL): \"Set insufflator pressure\" maps to insufflator_start (\"insufflator on\")"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1591",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1591/customer-9-set-flow-rate-no-type-or-value-should-map-to-insufflator",
+      "status": "In Review",
+      "priority": "Urgent",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "Customer #9: \"Set flow rate\" \u2192 \"no type or value\" (should map to insufflator_flow_set_command)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-549",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-549/mvp-sub-issue-2-compliance-production-bar",
+      "status": "In Progress",
+      "priority": "Urgent",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-547",
+      "labels": [],
+      "title": "MVP Sub-issue 2 \u2014 Compliance (Production Bar)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-635",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-635/production-domain-decision-procurement",
+      "status": "In Review",
+      "priority": "Urgent",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-626",
+      "labels": [],
+      "title": "Production: Domain decision + procurement"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-848",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-848/rip-out-non-compliant-gemini-rest-path-in-sharedaigeminigo-spice-not",
+      "status": "In QA",
+      "priority": "Urgent",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-549",
+      "labels": [],
+      "title": "Rip out non-compliant Gemini REST path in shared/ai/gemini.go (spice not planned)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-899",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-899/convention-editor-remove-openaiopenrouter-llm-paths-vertex-only-baa",
+      "status": "In QA",
+      "priority": "Urgent",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-549",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Convention editor: remove OpenAI/OpenRouter LLM paths \u2014 Vertex-only (BAA) for SALT transcript AI"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-939",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-939/wire-auth-cta-and-test-login-flow",
+      "status": "In Progress",
+      "priority": "Urgent",
+      "project": "Agent-Control Landing Page",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-970",
+      "labels": [],
+      "title": "Wire auth CTA and test login flow"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1036",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1036/verify-go-api-tracks-endpoints-work-end-to-end",
+      "status": "Todo",
+      "priority": "High",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Verify Go API tracks endpoints work end-to-end"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1037",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1037/verify-go-api-mixes-and-mix-tracks-endpoints",
+      "status": "Todo",
+      "priority": "High",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Verify Go API mixes and mix-tracks endpoints"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1038",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1038/test-mix-generation-pipeline-end-to-end-post-generate-job-polling",
+      "status": "Todo",
+      "priority": "High",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Test mix generation pipeline end-to-end (POST /generate \u2192 job polling \u2192 download)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1039",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1039/test-thumbnail-upload-auto-generation-and-preview-endpoint",
+      "status": "Todo",
+      "priority": "High",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Test thumbnail upload, auto-generation, and preview endpoint"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1040",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1040/set-up-react-frontend-npm-install-dev-server-running",
+      "status": "Todo",
+      "priority": "High",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Set up React frontend (npm install + dev server running)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1041",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1041/test-track-library-ui-add-youtube-url-add-file-upload-status-polling",
+      "status": "Todo",
+      "priority": "High",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Test Track Library UI (add YouTube URL, add file upload, status polling, delete)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1042",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1042/test-mix-builder-ui-create-mix-add-tracks-reorder-generate-progress",
+      "status": "Todo",
+      "priority": "High",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Test Mix Builder UI (create mix, add tracks, reorder, generate, progress bar)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1077",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1077/release-promote-the-core-817-student-stack-to-master-via-the",
+      "status": "In Progress",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Release: promote the CORE-817 student stack to master via the integration branch"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1196",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1196/hard-delete-admin-session-level-and-org-level",
+      "status": "In Progress",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Hard Delete (Admin) \u2014 session-level and org-level"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1210",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1210/license-seat-count-not-updating-reverts-to-previous-value-after-update",
+      "status": "In Review",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "CORE-1065",
+      "labels": [
+        "SALT",
+        "Bug"
+      ],
+      "title": "License seat count not updating \u2014 reverts to previous value after \"Update license count\""
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1381",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1381/remove-all-frontend-direct-geminillm-calls-from-salt-convention-editor",
+      "status": "In QA",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Remove all frontend-direct Gemini/LLM calls from SALT convention editor (backend-only LLM)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1383",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1383/consent-gcs-objects-bypass-speaker-right-to-erasure-off-session-prefix",
+      "status": "Todo",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Consent GCS objects bypass speaker right-to-erasure (off session prefix tree)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1385",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1385/verify-infra-layer-hipaa-controls-for-phi-buckets-baa-encryption",
+      "status": "Todo",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Verify infra-layer HIPAA controls for PHI buckets (BAA, encryption, retention, data-access logging)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1388",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1388/saltier-worker-set-numba-cache-dir-so-parakeetnemo-loads-in-the-read",
+      "status": "In QA",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "saltier-worker: set NUMBA_CACHE_DIR so Parakeet/NeMo loads in the read-only Nix store"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1391",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1391/adminupdatememberrole-self-demotion-guard-compares-clerk-authuserid-to",
+      "status": "In Review",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "AdminUpdateMemberRole self-demotion guard compares Clerk authUserID to a users.uid \u2014 guard is dead"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1403",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1403/build-bug-diathekemodel-train-chosun-doesnt-regenerate-regexyaml",
+      "status": "In Review",
+      "priority": "High",
+      "project": "BERT NLU Toolkit (SoW6 T2)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "Build bug: `diathekemodel train chosun` doesn't regenerate regex.yaml (silent 148\u2192118 regression)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1411",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1411/forward-expectedentities-over-the-grpc-nlu-path",
+      "status": "Todo",
+      "priority": "High",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Feature"
+      ],
+      "title": "Forward ExpectedEntities over the gRPC NLU path"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1431",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1431/energy-mode-set-dialog-prompt-for-monopolar-bipolar-new-ixd-energy",
+      "status": "In Review",
+      "priority": "High",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "energy_mode_set dialog: prompt for monopolar_bipolar (new IxD energy-mode flow)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1432",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1432/brightness-dialog-required-slot-prompt-on-set-optional-slots-on-incdec",
+      "status": "In Review",
+      "priority": "High",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "Brightness dialog: required-slot prompt on \"set\", optional slots on inc/dec, no over-prompt for \"set brightness to low\""
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1435",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1435/multi-role-org-membership-assign-multiple-org-roles-per-member-users",
+      "status": "In Review",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Multi-role org membership \u2014 assign multiple org roles per member (Users tab)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1456",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1456/increasedecrease-vs-set-per-feature-intent-behavior-sarthaks-spec",
+      "status": "In Review",
+      "priority": "High",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "Increase/decrease vs set: per-feature intent behavior (Sarthak's spec)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1468",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1468/admin-assign-subscription-org-selector-submits-auth-system-id-500s-on",
+      "status": "In Progress",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Admin assign-subscription: org selector submits auth_system_id, 500s on orgs with an external id"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1475",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1475/gate-checkout-returns-verify-before-declaring-success-no-silent",
+      "status": "In Progress",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Gate checkout returns: verify before declaring success (no silent success on delayed/failed webhook)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1514",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1514/saltier-worker-torchtorchaudio-version-mismatch-torchaudio-211-needs",
+      "status": "In QA",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "saltier-worker: torch/torchaudio version mismatch (torchaudio 2.11 needs CUDA 13, torch 2.10 ships CUDA 12) breaks NeMo import"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1538",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1538/bert-training-diverges-loss-1e33-inf-grad-in-chosun-torchtrain-nix-env",
+      "status": "In Review",
+      "priority": "High",
+      "project": "BERT NLU Toolkit (SoW6 T2)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "BERT training diverges (loss ~1e33, inf grad) in chosun #torchTrain nix env"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1539",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1539/diathekesvr-panics-index-out-of-range-on-nan-intent-confidences-in",
+      "status": "In Review",
+      "priority": "High",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "diathekesvr panics (index out of range) on NaN intent confidences in getCandidates"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1547",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1547/checkout-fails-in-all-deployed-envs-invalid-success-url-cors-allowed",
+      "status": "In Review",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Checkout fails in all deployed envs: invalid success_url (CORS_ALLOWED_ORIGINS unset \u2192 redirect guard fails closed)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1577",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1577/sow-t43-ixd-flowcharts-tsvs-permutation-testsets-for-energy-and",
+      "status": "In Review",
+      "priority": "High",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Feature"
+      ],
+      "title": "SoW T4.3: IxD flowcharts \u2192 TSVs \u2192 permutation testsets for energy & insufflation dialogs"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1584",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1584/customer-2-brightness-incrdecr-over-prompts-for-a-level-set-brightness",
+      "status": "In Review",
+      "priority": "High",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "Customer #2: brightness incr/decr over-prompts for a level (\"Set brightness to what level?\")"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1587",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1587/customer-5-remove-final-replies-from-brightnessforce-feedback",
+      "status": "In Review",
+      "priority": "High",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke"
+      ],
+      "title": "Customer #5: remove final replies from brightness/force-feedback-set/energy-wattage/scope-flip/insufflation/timer/smoke-evac commands"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1589",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1589/customer-7-set-insufflator-mode-fires-mode-command-before-prompting",
+      "status": "In Review",
+      "priority": "High",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "Customer #7: \"Set insufflator mode\" fires mode command before prompting; prompt arrives after command result"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1593",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1593/self-serve-transcription-blocked-by-unconditional-speaker-consent-gate",
+      "status": "In QA",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Self-serve transcription blocked by unconditional speaker-consent gate at finalize"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-547",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-547/mvp-release-checklist-salt-saas",
+      "status": "In Progress",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-262",
+      "labels": [],
+      "title": "MVP Release Checklist \u2014 Salt SaaS"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-548",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-548/mvp-sub-issue-1-security-and-operational-readiness",
+      "status": "In QA",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "CORE-547",
+      "labels": [],
+      "title": "MVP Sub-issue 1 \u2014 Security & Operational Readiness"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-550",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-550/mvp-sub-issue-3-core-feature-completeness-salt-lsa",
+      "status": "In Progress",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-547",
+      "labels": [],
+      "title": "MVP Sub-issue 3 \u2014 Core Feature Completeness (Salt LSA)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-553",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-553/mvp-sub-issue-6-environments-staging-and-production",
+      "status": "Todo",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-547",
+      "labels": [],
+      "title": "MVP Sub-issue 6 \u2014 Environments (Staging & Production)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-554",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-554/mvp-sub-issue-7-branching-and-deployment-strategy",
+      "status": "In Progress",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-624",
+      "labels": [],
+      "title": "MVP Sub-issue 7 \u2014 Branching & Deployment Strategy"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-555",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-555/mvp-sub-issue-8-move-salt-saas-off-aws",
+      "status": "Todo",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-547",
+      "labels": [],
+      "title": "MVP Sub-issue 8 \u2014 Move Salt SaaS off AWS"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-561",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-561/update-terms-of-service-and-privacy-policy-for-salt-saas-mvp",
+      "status": "Todo",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-549",
+      "labels": [],
+      "title": "Update Terms of Service and Privacy Policy for Salt SaaS MVP"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-650",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-650/dont-persist-incomplete-stripe-subscriptions-to-org-subscriptions",
+      "status": "In QA",
+      "priority": "High",
+      "project": "Stripe Integration for Billing and Subscriptions",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "SALT",
+        "Bug"
+      ],
+      "title": "Don't persist incomplete Stripe subscriptions to org_subscriptions"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-674",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-674/revert-analysis-tab-to-generic-score-layout-from-salt-analysisscores",
+      "status": "In QA",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Revert Analysis tab to generic score layout from SALT analysis/scores page"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-706",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-706/phase-3-background-sync-and-erp-integration",
+      "status": "In Progress",
+      "priority": "High",
+      "project": "AgroVerify Edge \u2014 Design & Development",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "[Phase 3] Background Sync & ERP Integration"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-822",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-822/admin-gate-broken-getmypermissions-dev-fallback-grants-admin-to-any",
+      "status": "In Review",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Admin gate broken: GetMyPermissions dev fallback grants admin to any unresolved caller"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-826",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-826/self-serve-org-creation-grants-the-global-admin-role-at-org-scope-org",
+      "status": "In Review",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Self-serve org creation grants the global Admin role at org scope (org owners become platform admins)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-827",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-827/identityusers-allows-duplicate-emails-no-unique-constraint-cross-clerk",
+      "status": "In QA",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "identity.users allows duplicate emails \u2014 no unique constraint; cross-Clerk-instance login forks a second identity"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-851",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-851/new-session-skip-product-selection-step-until-spice-is-integrated",
+      "status": "In QA",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "New Session: skip product-selection step until Spice is integrated"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-856",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-856/transcriber-portal-manager-override-to-unclaimreassign-sessions-keep",
+      "status": "In QA",
+      "priority": "High",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Transcriber portal: manager override to unclaim/reassign sessions (keep edits)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1004",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1004/migrate-session-read-view-all-gate-from-org-admin-role-to-a-view-all",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Migrate session-read view-all gate from org-admin role to a view-all-org-sessions RBAC permission"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1006",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1006/add-refstagsv-to-cicd-builder-wif-binding-before-enabling-prod-tag",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Add refs/tags/v* to cicd-builder WIF binding before enabling prod tag deploys"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1043",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1043/test-thumbnail-upload-ui-and-preview-in-mix-builder",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Test thumbnail upload UI and preview in Mix Builder"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1044",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1044/cross-browser-testing-chrome-firefox-safari-edge",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Cross-browser testing (Chrome, Firefox, Safari, Edge)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1045",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1045/test-mp4-export-and-verify-youtube-upload-compatibility",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Test MP4 export and verify YouTube upload compatibility"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1046",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1046/create-and-publish-first-proof-of-concept-youtube-mix",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "DJ Mix Studio",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Create and publish first proof-of-concept YouTube mix"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1050",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1050/saltier-worker-salt-coding-accuracy-gold-eval-findings-prioritized",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Saltier worker SALT-coding accuracy: gold eval findings + prioritized fixes"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1054",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1054/control-plane-surface-dont-swallow-instance-billing-query-errors-blank",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Control plane: surface (don't swallow) instance billing query errors \u2014 blank subscriptions view during deploy skew"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1141",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1141/stripe-client-remove-process-global-stripekey-mutex-per-request-api",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Stripe client: remove process-global stripe.Key mutex (per-request API key)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1147",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1147/hide-gender-field-on-speaker-intake-forms-behind-a-feature-flag-keep",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Hide gender field on speaker intake forms behind a feature flag (keep plumbing)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1155",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1155/raise-audio-upload-cap-from-100-mb-to-200-mb-lsa-new-session-upload",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-550",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Raise audio upload cap from 100 MB to 200 MB (LSA new-session upload)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1156",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1156/convention-editor-transcribe-is-not-responsive-breaks-on-mobile-narrow",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-550",
+      "labels": [
+        "SALT",
+        "Bug"
+      ],
+      "title": "Convention editor (/transcribe) is not responsive \u2014 breaks on mobile / narrow viewports"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1157",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1157/convention-editor-remove-the-demo-mode-toggle-before-gtm",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-550",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Convention editor: remove the \"Demo\" mode toggle before GTM"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1163",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1163/verify-site-demo-mode-product-tour-work-correctly-with-the",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-550",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Verify site demo mode + product tour work correctly with the transcription editor"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1209",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1209/validate-clerk-key-pair-at-startup-redirect-signed-in-users-from-auth",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Validate Clerk key pair at startup; redirect signed-in users from auth pages"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1239",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1239/convention-editor-header-hide-plugin-hidden-caret-hard-break-selection",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Convention editor: header hide plugin \u2014 hidden caret / hard_break / selection edge cases"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1281",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1281/transfer-mechanism-move-records-between-organizations",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Transfer mechanism: Move records between organizations"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1307",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1307/precompute-audio-waveform-peaks-to-fix-slowjanky-convention-editor",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Precompute audio waveform peaks to fix slow/janky convention-editor player"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1384",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1384/audio-signed-url-15min-ttl-expires-mid-stream-on-long-recordings",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Audio signed-URL (15min TTL) expires mid-stream on long recordings \u2192 player stalls"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1392",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1392/saltier-worker-conventions-mode-drops-pause-markers-transcribe-apply",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "saltier-worker: conventions mode drops pause markers (transcribe -> apply conventions)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1397",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1397/client-reply-id-integration-py-genproto-pin-silently-no-ops-on",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "Reply ID to Client (SoW6 T3)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "Client reply_id integration: py-genproto pin silently no-ops on reinstall"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1415",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1415/fill-parseresponse-bert-result-confidences-in-the-command-action-sow",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Feature"
+      ],
+      "title": "Fill ParseResponse (BERT result + confidences) in the Command Action (SoW T4.5)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1433",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1433/media-resize-needs-a-required-size-slot-with-a-prompt",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "media_resize needs a required size slot with a prompt"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1436",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1436/signed-audio-upload-url-ignores-uploadurlttl-config-hardcoded-15m",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Signed audio-upload URL ignores UploadURLTTL config (hardcoded 15m) \u2192 intermittent 403 \"Request has expired\""
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1437",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1437/split-prompt-vs-reply-yaml-files-reply-id-follow-up",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "Reply ID to Client (SoW6 T3)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Feature"
+      ],
+      "title": "Split prompt vs reply YAML files (reply_id follow-up)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1443",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1443/ci-fmt-check-prettier-eacces-on-read-only-node-modules-cache-dir",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "CI fmt-check: prettier EACCES on read-only node_modules cache dir"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1452",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1452/salt-c-unit-segmenter-neural-shipped-acoustic-timing-extension",
+      "status": "In Progress",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "Experiment"
+      ],
+      "title": "[SALT] C-unit segmenter \u2014 neural (shipped) + acoustic-timing extension"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1454",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1454/salt-pipeline-perf-share-one-spacy-instance-across-converters",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "[SALT] Pipeline perf \u2014 share one spaCy instance across converters"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1459",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1459/wire-slot-fill-extractor-into-the-built-chosun-model-slot-fill-is",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "Wire slot-fill extractor into the built chosun model \u2014 slot-fill is inert in deployed models until then"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1464",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1464/collapse-individualenterprise-into-a-single-standard-plan-make-org",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Collapse Individual/Enterprise into a single \"Standard\" plan; make org_type & billing_mode independent of plan"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1466",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1466/prof-services-reviewers-403-on-convention-editor-ai-passes-conventions",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "SALT",
+        "Bug"
+      ],
+      "title": "Prof-services reviewers 403 on convention-editor AI passes (/conventions, /retranscribe) \u2014 same seat gate as CORE-1442"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1467",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1467/admin-org-settings-consolidated-subscription-card-per-org-feature",
+      "status": "In Progress",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Admin org settings: consolidated subscription card + per-org feature grants"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1469",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1469/admin-assign-subscription-surface-a-clear-error-instead-of-a-silent",
+      "status": "In Progress",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Admin assign-subscription: surface a clear error instead of a silent failure / raw 500"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1470",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1470/run-stacksh-enable-stripe-cli-webhook-forwarding-for-local-dev-so-paid",
+      "status": "In Progress",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "run-stack.sh: enable Stripe CLI webhook forwarding for local dev so paid checkouts sync"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1472",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1472/org-admin-can-rename-the-org-from-the-org-settings-plan-and-licenses",
+      "status": "In Progress",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Org admin can rename the org from the org-settings (Plan & Licenses) page"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1473",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1473/admin-account-class-flip-replace-native-windowpromptalert-with-an",
+      "status": "In Progress",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Admin account-class flip: replace native window.prompt/alert with an inline confirm + reason"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1474",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1474/demo-tour-tooltip-renders-off-screen-near-viewport-edges-clamp-it-into",
+      "status": "In Progress",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Demo tour tooltip renders off-screen near viewport edges; clamp it into view"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1540",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1540/chosun-nix-flake-torchtrain-devshell-pinned-old-nixpkgs-hand-built",
+      "status": "In Progress",
+      "priority": "Medium",
+      "project": "BERT NLU Toolkit (SoW6 T2)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke"
+      ],
+      "title": "chosun nix flake torchTrain devshell: pinned-old nixpkgs, hand-built deepspeed/torchvision, GPU needs nixglhost"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1544",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1544/automated-bypass-mode-e2e-for-signupregistration-funnels-clerk-server",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-850",
+      "labels": [],
+      "title": "Automated bypass-mode E2E for signup/registration funnels (Clerk server-boundary fake)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1567",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1567/internal-wakeword-api-robustly-parse-both-single-and-comma-separated",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "Wakeword Model & Monitoring (SoW6 T1)",
+      "assignee": "Penpicha Sangsanga",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Feature"
+      ],
+      "title": "Internal wakeword API: robustly parse both single and comma-separated WakeWord"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1576",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1576/brightness-level-set-command-inputs-brightness-modelevel-mode-overlap",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "brightness_level_set: command inputs + brightness_mode/level_mode overlap"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1579",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1579/add-false-positive-adversarial-nlu-test-to-the-standard-model-release",
+      "status": "In Progress",
+      "priority": "Medium",
+      "project": "NLU Eval Harness (Diatheke / Chosun)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke"
+      ],
+      "title": "Add false-positive (adversarial) NLU test to the standard model-release test suite"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1580",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1580/devcontainer-natively-run-frontends-cant-reach-backends-run-stack",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Devcontainer: natively-run frontends can't reach backends (run-stack network wiring)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1581",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1581/task-completion-scorer-capture-reply-id-from-replyaction-now-sent-over",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "NLU Eval Harness (Diatheke / Chosun)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke"
+      ],
+      "title": "Task-completion scorer: capture reply_id from ReplyAction (now sent over the API)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1590",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1590/customer-8-support-insufflator-preset-verbiage-for-insufflator-mode",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "Diatheke Usability & Slot Filling (SoW6 T4)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke"
+      ],
+      "title": "Customer #8: support \"insufflator preset\" verbiage for insufflator mode"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1596",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1596/saltier-worker-enforce-configurable-max-audio-duration-file-size",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "SALT"
+      ],
+      "title": "Saltier worker: enforce configurable max audio duration + file size"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1633",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1633/frontend-pre-upload-audio-size-duration-check-with-user-alert",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Frontend: pre-upload audio size + duration check with user alert"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1634",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1634/convention-editor-enforce-6000-word-transcript-limit-gate-alert",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Convention editor: enforce 6000-word transcript limit (gate + alert)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-464",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-464/break-out-ddl-and-goose-rights-from-api-iam",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [
+        "SALT",
+        "Feature"
+      ],
+      "title": "Break out DDL and goose rights from API IAM"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-562",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-562/e-signature-vendor-decision-clickwrap-funnel-a-sales-led-funnel-b-zoho",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Alok Parlikar",
+      "parent": "CORE-549",
+      "labels": [],
+      "title": "E-signature vendor decision: clickwrap (Funnel A), sales-led (Funnel B), Zoho Sign (Funnel C)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-667",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-667/remove-transcriber-queue-and-reviewer-queue-sidebar-links-queues",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Remove Transcriber Queue and Reviewer Queue sidebar links \u2014 queues belong on the Transcriber dashboard"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-807",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-807/settingsteam-has-no-sidebar-nav-entry-reachable-only-by-direct-url",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "/settings/team has no sidebar nav entry \u2014 reachable only by direct URL"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-816",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-816/salt-student-subscription-seat-and-invite-model-per-session-cost",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-550",
+      "labels": [],
+      "title": "SALT student subscription + seat & invite model + per-session cost tracking"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-817",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-817/3-year-student-subscription-dollar80-3-years-during-registration",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-816",
+      "labels": [],
+      "title": "3-year student subscription ($80 / 3 years) during registration"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-819",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-819/admin-can-self-assign-unassign-a-seat",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-816",
+      "labels": [],
+      "title": "Admin can self-assign / unassign a seat"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-824",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-824/no-startup-guard-against-frontendbackend-clerk-instance-mismatch",
+      "status": "In Review",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "No startup guard against frontend/backend Clerk instance mismatch"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-852",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-852/clinician-dashboard-three-session-statuses-transcript-source-column",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Clinician dashboard: three session statuses + transcript source column"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-855",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-855/clinician-notes-section-on-submission-to-transcription-services",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Clinician notes section on submission to transcription services"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-857",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-857/transcribe-dashboard-assigned-transcriberreviewer-name-not-showing",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Transcribe dashboard: assigned transcriber/reviewer name not showing"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-859",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-859/submit-for-review-optional-assignment-to-a-specific-reviewer",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Submit for review: optional assignment to a specific reviewer"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-860",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-860/configurable-review-stages-ai-first-pass-peer-review",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Configurable review stages: AI first pass + peer review"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-867",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-867/convention-editor-improve-analysiseditor-load-time",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Convention editor: improve analysis/editor load time"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-870",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-870/convention-editor-hide-phase-1-transcription-from-clinicians-auto",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Convention editor: hide Phase 1 (transcription) from clinicians, auto-populate headers"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-887",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-887/extend-email-canonicalization-to-org-invites-case-insensitive-parity",
+      "status": "Todo",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Extend email canonicalization to org_invites (case-insensitive parity) + cleanup"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-928",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-928/convention-editor-dark-mode-pass-brand-tokens-css-custom-properties",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Convention editor \u2014 dark-mode pass (brand tokens \u2192 CSS custom properties + ~200-class dark: sweep)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-930",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-930/wire-convention-editor-playwright-e2e-specs-into-ci",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Wire convention-editor Playwright e2e specs into CI"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-933",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-933/upload-transcript-jobs-create-no-session-row-invisible-on-session",
+      "status": "In QA",
+      "priority": "Medium",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Upload-transcript jobs create no session row \u2014 invisible on session dashboards/queue"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1056",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1056/docssaas-requirementsmd-resolve-duplicate-requirement-ids-g-bill",
+      "status": "In QA",
+      "priority": "Low",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "docs/SAAS_REQUIREMENTS.md: resolve duplicate requirement IDs G-BILL-20/21/22/23"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1057",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1057/fix-stale-intro-copy-assertion-in-subscriptionspects-doesnt-match",
+      "status": "In QA",
+      "priority": "Low",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Fix stale intro-copy assertion in subscription.spec.ts (doesn't match rendered text)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1404",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1404/transformers-version-drift-training-smoke-test-on-pinned-nix-versions",
+      "status": "In Review",
+      "priority": "Low",
+      "project": "BERT NLU Toolkit (SoW6 T2)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke"
+      ],
+      "title": "transformers version drift: training smoke-test on pinned nix versions"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1458",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1458/auto-refresh-nix-vendorhashnpmdepshash-on-dependabot-prs",
+      "status": "In Review",
+      "priority": "Low",
+      "project": "(none)",
+      "assignee": "Alok Parlikar",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Auto-refresh nix vendorHash/npmDepsHash on Dependabot PRs"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1465",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1465/e2e-run-playwright-dev-server-with-turbopack-to-eliminate-cold-compile",
+      "status": "In Review",
+      "priority": "Low",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "e2e: run Playwright dev server with Turbopack to eliminate cold-compile false failures"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1471",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1471/show-the-student-plan-card-in-the-inline-plan-and-licenses-settings",
+      "status": "In Progress",
+      "priority": "Low",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Show the Student plan card in the inline Plan & Licenses settings tab"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1630",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1630/saltier-worker-reject-oversized-audio-before-gcs-download-blobsize",
+      "status": "In Review",
+      "priority": "Low",
+      "project": "(none)",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "SALT"
+      ],
+      "title": "Saltier worker: reject oversized audio before GCS download (blob.size metadata)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-556",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-556/mvp-sub-issue-9-post-mvp-backlog-parent-for-deferred-work",
+      "status": "Todo",
+      "priority": "Low",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-547",
+      "labels": [],
+      "title": "MVP Sub-issue 9 \u2014 Post-MVP backlog (parent for deferred work)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-675",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-675/frontend-add-nextjs-eslint-config-and-fix-all-lint-violations",
+      "status": "In QA",
+      "priority": "Low",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Frontend: add Next.js ESLint config and fix all lint violations"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-808",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-808/duplicate-team-nav-entry-in-componentssaltsidebartsx-key-collision",
+      "status": "In Review",
+      "priority": "Low",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Duplicate \"Team\" nav entry in components/salt/sidebar.tsx (key collision)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1059",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1059/frontend-featspeakers-gender-field-future-dob-guard-card-grid-picker",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "[frontend] feat(speakers): gender field, future-DOB guard, card-grid picker (PR #331)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1060",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1060/first-run-setup-wizard-for-fresh-instance-bootstrap-site-admin",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [],
+      "title": "First-run setup wizard for fresh instance bootstrap (site-admin)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1144",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1144/decision-record-speaker-metadata-by-product-salt-vs-spice",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-550",
+      "labels": [],
+      "title": "Decision record: speaker metadata by product (SALT vs SPICE)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1158",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1158/salt-transcription-editor-saltroadmap-alignment-report-proceed-to",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "SALT transcription editor \u2014 SALTRoadmap alignment (report + proceed-to-report flow)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1160",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1160/re-surface-database-selection-after-proceed-to-report",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-1158",
+      "labels": [],
+      "title": "Re-surface database selection after Proceed to Report"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1161",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1161/transcript-responsibility-acknowledgment-modal-after-proceed-to-report",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-1158",
+      "labels": [],
+      "title": "Transcript-responsibility acknowledgment modal after Proceed to Report"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1162",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1162/editor-layout-steps-left-shortcuts-right-salt-header-behind-view-salt",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-1158",
+      "labels": [],
+      "title": "Editor layout: steps left, shortcuts right, SALT header behind View SALT Header"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1198",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1198/hard-delete-session-level-implementation",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "CORE-1196",
+      "labels": [],
+      "title": "Hard Delete: session-level implementation"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1199",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1199/hard-delete-org-level-implementation",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "CORE-1196",
+      "labels": [],
+      "title": "Hard Delete: org-level implementation"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1211",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1211/tpm-hard-delete-org-level-consent-doc-gcs-purge-compliance-t3b",
+      "status": "In Progress",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-1196",
+      "labels": [],
+      "title": "[TPM] Hard Delete: org-level consent-doc GCS purge + compliance (T3b)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1284",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1284/punctuation-agnostic-c-unit-and-maze-boundary-scoring-in",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Jeff Lilly",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Punctuation-agnostic C-unit & maze boundary scoring in eval/conventions"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1393",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1393/wakeword-monitoring-config-thresholds-wakewordresult-locationaccepted",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "Wakeword Model & Monitoring (SoW6 T1)",
+      "assignee": "Penpicha Sangsanga",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Feature"
+      ],
+      "title": "Wakeword monitoring: config thresholds + WakewordResult location/accepted"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1398",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1398/embed-chosun-torch-for-inline-bert-training-embed-torch-build-tag",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "BERT NLU Toolkit (SoW6 T2)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Feature"
+      ],
+      "title": "Embed chosun_torch for inline BERT training (embed_torch build tag)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1399",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1399/bert-training-robustness-for-diathekemodel-pipelines",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "BERT NLU Toolkit (SoW6 T2)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "BERT training robustness for diathekemodel pipelines"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1400",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1400/slim-bert-training-import-closure-lazy-deepspeedhyperopthigher",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "BERT NLU Toolkit (SoW6 T2)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Feature"
+      ],
+      "title": "Slim BERT training import closure (lazy deepspeed/hyperopt/higher)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1401",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1401/pynvml-unconditional-import-breaks-packaged-trainpy-env",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "BERT NLU Toolkit (SoW6 T2)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Bug"
+      ],
+      "title": "pynvml unconditional import breaks packaged train.py env"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1417",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1417/entity-level-eval-harness-chosun-cmdentityeval",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "NLU Eval Harness (Diatheke / Chosun)",
+      "assignee": "david@cobaltspeech.com",
+      "parent": "(none)",
+      "labels": [
+        "Diatheke",
+        "Feature"
+      ],
+      "title": "Entity-level eval harness (chosun cmd/entityeval)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1476",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1476/license-change-ux-proration-preview-confirmation-in-change-my-plan",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "License-change UX: proration preview + confirmation in Change-My-Plan modal"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1477",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1477/invoiced-orgs-license-changes-via-stripe-invoice-items-invoice",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Invoiced orgs: license changes via Stripe invoice items + invoice mirror/webhook sync"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1478",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1478/admin-invoices-tab-list-invoices-statusdetail-pdf-download",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Admin \"Invoices\" tab \u2014 list invoices (status/detail) + PDF download"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1552",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1552/salt-new-session-ca-confirmation-line-hidden-for-infants-0n-months",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "SALT new-session: CA confirmation line hidden for infants (0;N months)"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1553",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1553/salt-new-session-speaker-deep-link-shows-empty-picker-green-step-on",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "SALT new-session: ?speaker= deep-link shows empty picker + green step on fetch failure"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-1592",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-1592/salt-scores-agreement-report-saltier-diff-correctness-fixes",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [
+        "salt-modeling",
+        "SALT"
+      ],
+      "title": "SALT scores agreement report + saltier-diff correctness fixes"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-33",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-33/prepare-real-testset-to-evaluate-capt-performance",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "CAPT Model v2026.01 Airworthiness",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Prepare REAL testset to evaluate CAPT performance"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-435",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-435/transcription-does-not-handle-network-interruption-gracefully",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "(unassigned)",
+      "parent": "(none)",
+      "labels": [
+        "SALT"
+      ],
+      "title": "Transcription Does Not Handle Network Interruption Gracefully"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-443",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-443/vanta-remediate-critical-vulnerabilities-identified-in-packages-are",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Shahruk Hossain",
+      "parent": "(none)",
+      "labels": [],
+      "title": "[Vanta] Remediate \"Critical vulnerabilities identified in packages are addressed (GitHub Repo)\""
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-495",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-495/verint-hebrew-redaction",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "Support - Verint Redaction",
+      "assignee": "Guillermo Segovia",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Verint Hebrew Redaction"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-569",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-569/create-ipsyn-scoring-report-from-clan-code",
+      "status": "In Progress",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Jeff Lilly",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Create IPSyn scoring report from CLAN code"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-570",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-570/create-llm-help-bot-for-salt",
+      "status": "Todo",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Jeff Lilly",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Create LLM help bot for SALT"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-594",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-594/expand-contraction-and-possessive-marking-coverage",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-829",
+      "labels": [],
+      "title": "Expand contraction & possessive marking coverage"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-596",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-596/preserve-edits-and-conventions-across-transcript-edits",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-829",
+      "labels": [],
+      "title": "Preserve edits & conventions across transcript edits"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-597",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-597/export-analysis-for-customers-who-dont-have-salt",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-832",
+      "labels": [],
+      "title": "Export analysis for customers who don't have SALT"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-598",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-598/surface-elapsed-time-wordutterance-counts-50-utterance-stop-heuristic",
+      "status": "In Progress",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-830",
+      "labels": [],
+      "title": "Surface elapsed time + word/utterance counts; 50-utterance stop heuristic for Play/Con/SSS"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-599",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-599/si-code-per-utterance-edit-menu-parity-with-salt",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "(none)",
+      "assignee": "Guillermo Segovia",
+      "parent": "CORE-829",
+      "labels": [],
+      "title": "SI code per utterance \u2014 edit-menu parity with SALT"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-925",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-925/create-footer-component-with-dynamic-copyright",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "WO-2026-06-06-spice-rack-footer",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-968",
+      "labels": [],
+      "title": "Create Footer component with dynamic copyright"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-926",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-926/integrate-footer-into-root-layout",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "WO-2026-06-06-spice-rack-footer",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-968",
+      "labels": [],
+      "title": "Integrate Footer into root layout"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-927",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-927/verify-footer-responsive-behavior",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "WO-2026-06-06-spice-rack-footer",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-968",
+      "labels": [],
+      "title": "Verify footer responsive behavior"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-968",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-968/add-footer-with-copyright-to-cobalt-application",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "WO-2026-06-06-spice-rack-footer",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Add footer with copyright to Cobalt application"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-972",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-972/comprehensive-test-coverage-for-spice-rack",
+      "status": "In Progress",
+      "priority": "No priority",
+      "project": "WO-2026-06-06-playwright-testing",
+      "assignee": "Jeremy Blair",
+      "parent": "(none)",
+      "labels": [],
+      "title": "Comprehensive Test Coverage for Spice Rack"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-973",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-973/qa-phase-1-mobile-e2e-tests",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "WO-2026-06-06-playwright-testing",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-972",
+      "labels": [],
+      "title": "[QA] Phase 1: Mobile E2E Tests"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-974",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-974/qa-phase-2-funnel-edge-case-tests",
+      "status": "In QA",
+      "priority": "No priority",
+      "project": "WO-2026-06-06-playwright-testing",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-972",
+      "labels": [],
+      "title": "[QA] Phase 2: Funnel Edge Case Tests"
+    },
+    {
+      "area": "Other workstream",
+      "id": "CORE-976",
+      "url": "https://linear.app/cobaltspeech/issue/CORE-976/fullstack-phase-4-component-tests",
+      "status": "In Review",
+      "priority": "No priority",
+      "project": "WO-2026-06-06-playwright-testing",
+      "assignee": "Jeremy Blair",
+      "parent": "CORE-972",
+      "labels": [],
+      "title": "[Fullstack] Phase 4: Component Tests"
+    }
+  ],
+  "summary": {
+    "tabs": [
+      "Release Packages",
+      "Features by Release",
+      "Not in a Release",
+      "Legend"
+    ],
+    "row_counts": {
+      "Release Packages": 11,
+      "Features by Release": 85,
+      "Not in a Release": 283,
+      "Legend": 22
+    },
+    "stale_flagged_count": 56
+  }
+}

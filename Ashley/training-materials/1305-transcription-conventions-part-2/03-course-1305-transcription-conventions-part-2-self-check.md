@@ -1,0 +1,7 @@
+# Course 1305: Transcription - Conventions Part 2: Self Check
+
+<!-- https://classes.saltsoftware.com/mod/url/view.php?id=471 -->
+
+Completion requirements
+Mark as done
+Click on Self Check to open the resource.
