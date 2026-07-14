@@ -1,0 +1,178 @@
+[
+  {
+    "id": "CORE-1270",
+    "name": "Mars",
+    "level": "major",
+    "parent": null,
+    "codename": "Mars",
+    "status_linear": "In QA",
+    "integration_branch": "jeremy/integration-mars",
+    "env": {
+      "dev": true,
+      "staging": true,
+      "master": true
+    },
+    "description": "Combined product release bundling Mercury + Saturn + Guillermo's editor/transcriber workflow + Lyra + Pluto (release-of-releases).",
+    "notes": "Merged into master (prod branch) + dev + staging. Prod deploy not yet run (no vX.Y.Z tag, deploy-prod.yml not run). Trailing gold-corpus commit 185182cf/PR #527 not yet re-promoted to all envs."
+  },
+  {
+    "id": "CORE-1190",
+    "name": "Mercury",
+    "level": "minor",
+    "parent": "CORE-1270",
+    "codename": "Mercury",
+    "status_linear": "In QA",
+    "integration_branch": "jeremy/integration-product-hardening-mercury",
+    "env": {
+      "dev": true,
+      "staging": true,
+      "master": true
+    },
+    "description": "Admin cross-org org management + in-app multi-org (create/close/login-picker) + first-run/billing/security/RBAC hardening.",
+    "notes": "Merged into all three env branches (own PR #399 + Mars bundle); prod deploy not yet run."
+  },
+  {
+    "id": "CORE-1191",
+    "name": "Saturn",
+    "level": "minor",
+    "parent": "CORE-1270",
+    "codename": "Saturn",
+    "status_linear": "In QA",
+    "integration_branch": "jeremy/integration-registration-hardening-saturn",
+    "env": {
+      "dev": true,
+      "staging": true,
+      "master": true
+    },
+    "description": "Registration & Subscription Lifecycle Audit remediation (CORE-1165 cluster) \u2014 student checkout/subscription, legal/compliance capture, test-coverage, webhook robustness, tenant isolation.",
+    "notes": "Merged into all three env branches via Mars bundle; prod deploy not yet run."
+  },
+  {
+    "id": "CORE-1245",
+    "name": "Lyra",
+    "level": "minor",
+    "parent": "CORE-1270",
+    "codename": "Lyra",
+    "status_linear": "In Review",
+    "integration_branch": "shahruk/integration-saltier-pipeline-lyra",
+    "env": {
+      "dev": true,
+      "staging": true,
+      "master": true
+    },
+    "description": "Shahruk's saltier transcription pipeline (per-job modes, Parakeet ASR, graph config) + async convention-editor AI rewire.",
+    "notes": "Merged into all three env branches via Mars bundle (release PR #411 merged 2026-06-24); prod deploy not yet run."
+  },
+  {
+    "id": "CORE-1300",
+    "name": "Pluto",
+    "level": "minor",
+    "parent": "CORE-1270",
+    "codename": "Pluto",
+    "status_linear": "In Review",
+    "integration_branch": "jeremy/integration-org-settings-pluto",
+    "env": {
+      "dev": true,
+      "staging": true,
+      "master": true
+    },
+    "description": "Organization Settings refinements \u2014 org-admin + site-admin UX fixes (nav->org-switcher, Payment-methods tab + card-on-file, Users tab + license status, Student plan, context Help panel, invite-link & license-count bug fixes).",
+    "notes": "Merged into all three env branches via Mars bundle (one nix-vendorHash straggler e5074cb9 not re-promoted from the branch tip); prod deploy not yet run."
+  },
+  {
+    "id": "CORE-1550",
+    "name": "Earth",
+    "level": "minor",
+    "parent": "CORE-1270",
+    "codename": "Earth",
+    "status_linear": "In QA",
+    "integration_branch": "guillermo/integration-earth",
+    "env": {
+      "dev": true,
+      "staging": true,
+      "master": true
+    },
+    "description": "Combined product release bundling Guillermo's in-flight SALT/frontend fixes into one coordinated promotion (functions as a Mars sub-release).",
+    "notes": "Merged into Mars via a merged PR (integration PR #511 -> jeremy/integration-mars) and Mars is on all three env branches, so Earth is \u2611\u2611\u2611."
+  },
+  {
+    "id": "CORE-1566",
+    "name": "Orion",
+    "level": "major",
+    "parent": null,
+    "codename": "Orion",
+    "status_linear": "In Progress",
+    "integration_branch": "release/orion",
+    "env": {
+      "dev": false,
+      "staging": false,
+      "master": false
+    },
+    "description": "Product release following Mars; gathers feature/fix branches that land post-Mars-cut (speaker-caseload ownership scoping, admin release-info page, PHI retention hardening, erasure/retention deletes, IDOR audit sweep, Neptune licensing epic, Magento connector, targeted bug fixes).",
+    "notes": "In progress \u2014 gathering constituents; release/orion cut post-Mars, 11 commits, not yet promoted to any env. Some constituents (CORE-1294, CORE-1298) already landed in the master base via Pluto and ride Orion automatically."
+  },
+  {
+    "id": "CORE-1227",
+    "name": "Neptune",
+    "level": "minor",
+    "parent": "CORE-1566",
+    "codename": "Neptune",
+    "status_linear": "In Progress",
+    "integration_branch": "feature branches (phased, on develop)",
+    "env": {
+      "dev": false,
+      "staging": false,
+      "master": false
+    },
+    "description": "SaaS licensing-model overhaul \u2014 phased, multi-workstream epic: user/org dual-ownership licenses, personal-org provisioning, student verification, org-context safeguards, anti-abuse controls. Committed to Orion scope (2026-06-30).",
+    "notes": "No integration branch cut yet; Phase 0 (ADRs) in review, Phase 1 (foundations) in review, Phase 2 in progress. Phases 3/4b blocked on design-committee escalations #9/#10. Neptune branches currently based on 'saturn' plan and must re-target onto release/orion."
+  },
+  {
+    "id": "CORE-1628",
+    "name": "Bull",
+    "level": "minor",
+    "parent": "CORE-1566",
+    "codename": "Bull",
+    "status_linear": "In Progress",
+    "integration_branch": "guillermo/integration-bull",
+    "env": {
+      "dev": false,
+      "staging": false,
+      "master": false
+    },
+    "description": "Sub-release of Orion: batches post-Mars SALT editor/transcriber + UI fix PRs (#529-#538) onto one integration branch, which promotes into release/orion (not directly into env branches).",
+    "notes": "All 10 constituent PRs merged into guillermo/integration-bull as of 2026-07-03 (51 commits ahead of origin/master). Bundle -> release/orion PR not yet opened; not yet in any long-lived branch."
+  },
+  {
+    "id": "CORE-1193",
+    "name": "Rust",
+    "level": "major",
+    "parent": null,
+    "codename": "Rust",
+    "status_linear": "Backlog",
+    "integration_branch": "jeremy/integration-performance-cache-rust (planned)",
+    "env": {
+      "dev": false,
+      "staging": false,
+      "master": false
+    },
+    "description": "Redis/Memorystore performance cache release \u2014 shared Redis cache for RBAC + feature-flag hot paths (permission-revocation staleness fix; latency + DB-load wins).",
+    "notes": "Backlog (infra-blocked). Component PRs (spice-rack #299, gcp-infrastructure #43) moved out of draft but integration branch not yet cut."
+  },
+  {
+    "id": "CORE-1627",
+    "name": "Transcriber Portal 1.1",
+    "level": "major",
+    "parent": null,
+    "codename": "Transcriber Portal 1.1",
+    "status_linear": "Backlog",
+    "integration_branch": "release/transcriber-portal-1.1 (not yet cut)",
+    "env": {
+      "dev": false,
+      "staging": false,
+      "master": false
+    },
+    "description": "SALT company/ops dashboards (General Admin / Transcription Admin / Transcriber) \u2014 productionizes the CORE-1276 frozen prototypes. Standalone WIP release, not in Orion; major-release target TBD.",
+    "notes": "Planned \u2014 WIP; 12 components (rocks/pebbles/sand: F0/F1 foundations, R1-R4, P1-P5, sand chrome) all Backlog, no PRs yet."
+  }
+]
