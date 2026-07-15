@@ -3,9 +3,21 @@ name: start-salt-editor
 description: Start the SALT Convention Editor (local AI-assisted SALT transcript editor)
 ---
 
-Start the SALT Convention Editor (salt-convention-editor-sample). Repo is at /Users/ashley/Cobalt/prototypes/salt-convention-editor-sample.
+Start the SALT Convention Editor (salt-convention-editor-sample). Repo is expected at /Users/ashley/Cobalt/prototypes/salt-convention-editor-sample.
 
 This is a local-only AI-assisted SALT transcript editor. It uses an LLM (OpenAI, Gemini, or OpenRouter) to propose inline edits.
+
+**Known issue (confirmed 2026-07-15):** this repo is not present anywhere on this machine
+— not at the path above, not found in a broader disk search. It may not have been
+re-cloned after the laptop rebuild (see [[new-laptop-environment-rebuild]]), or the repo
+name/location may have changed. Before running the steps below, check for it first:
+
+```bash
+ls -d /Users/ashley/Cobalt/prototypes/salt-convention-editor-sample 2>/dev/null || echo "MISSING"
+```
+
+If missing, stop and tell the user the repo needs to be located or re-cloned before this
+skill can run — don't silently skip to a guessed path.
 
 ## 1. Check for .env.local
 ```bash

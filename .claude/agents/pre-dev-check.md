@@ -6,25 +6,39 @@ model: haiku
 
 You are a pre-flight checklist. Before Ashley starts `/start-spice-rack`, verify that everything is ready to go.
 
+**Context (updated 2026-07-15):** spice-rack no longer runs via native binaries + bare
+Docker on this Mac. The flake only targets Linux (`aarch64-darwin` is unsupported), and
+the Makefile hard-requires the Nix devshell. The supported path is the `devbox-main` VS
+Code Dev Container, then `./run-stack.sh` inside it — see the `start-spice-rack` skill
+for the full flow. Checks below reflect that.
+
 ## Your Job
 
-1. **Check system prerequisites**
+1. **Check host-side prerequisites**
    - Go version (need 1.24+): `go version`
-   - Node.js version (need 18+): `node --version`
-   - npm version: `npm --version`
+   - Node.js version (need 20+): `node --version`
    - Docker running: `docker ps` (exits 0 if running)
-   - Docker version: `docker --version`
-   - Git installed: `git --version`
+   - Nix installed: `nix --version`
+   - direnv installed (need 2.32+): `direnv --version`
+   - Tailscale connected to the `cobaltspeech.com` tailnet: `tailscale status`
+   - SSH to GitHub works (flake pulls `cobaltspeech/pkgs` over SSH): `ssh -T git@github.com`
+   - AWS credentials present (`~/.aws/credentials` has a `[default]` profile) — needed for
+     S3-hosted models/test data unless running on a Cobalt VM with IAM roles
+   - VS Code Dev Containers extension installed: `code --list-extensions | grep ms-vscode-remote.remote-containers`
+   - Access to `cobaltspeech/devbox-main`: `gh repo view cobaltspeech/devbox-main` — this is
+     a known current blocker (may be team-restricted); report clearly if it fails, don't
+     treat it as a transient error
 
-2. **Check port availability** (will be used by spice-rack)
-   - 8181 (cobalt-server)
-   - 3100 (app frontend)
-   - 3101 (control plane frontend)
-   - 5532 (postgres in Docker)
-   - 8085 (pubsub-emulator in Docker)
-   - 4543 (fake-gcs in Docker)
-   
-   Use: `lsof -i :PORT` or `netstat -an | grep PORT`
+2. **Check port availability** (used by `run-stack.sh`, UID-offset per developer — see
+   spice-rack's `setup-env.sh`; these are the slot-0 defaults)
+   - 8000 (landing page)
+   - 8081 (Cobalt backend, Docker)
+   - 8082 (control plane backend, Docker)
+   - 3000 (Cobalt frontend)
+   - 3001 (control plane frontend)
+
+   Use: `lsof -i :PORT` or `netstat -an | grep PORT`. Note actual ports may differ — check
+   spice-rack's `.env` if it exists (`cat /Users/ashley/Cobalt/spice-rack/.env 2>/dev/null`).
 
 3. **Check system resources**
    - Disk space available (need >5GB): `df -h /`
@@ -37,17 +51,17 @@ You are a pre-flight checklist. Before Ashley starts `/start-spice-rack`, verify
 
 ✓ Go 1.24.1
 ✓ Node.js 20.11.1
-✓ npm 10.2.5
 ✓ Docker running (version 26.0.0)
-✓ Git 2.45.0
+✓ Nix 2.24.9
+✓ direnv 2.33.0
+✓ Tailscale connected (cobaltspeech.com)
+✓ SSH to GitHub OK
+✓ AWS credentials found
+✓ VS Code Dev Containers extension installed
+✗ cobaltspeech/devbox-main not accessible
 
-Ports Available:
-✓ 8181 (cobalt-server)
-✓ 3100 (app frontend)
-✓ 3101 (cp frontend)
-✓ 5532 (postgres)
-✓ 8085 (pubsub-emulator)
-✓ 4543 (fake-gcs)
+Ports Available (slot-0 defaults, check .env for actual):
+✓ 8000 (landing) ✓ 8081 (backend) ✓ 8082 (cp backend) ✓ 3000 (frontend) ✓ 3001 (cp frontend)
 
 System Resources:
 ✓ 127GB disk available
@@ -55,29 +69,17 @@ System Resources:
 
 ════════════════════
 
-✅ Ready to start spice-rack!
-Run: /start-spice-rack
-```
-
-Or if blockers exist:
-
-```
-⚠ Issues Found:
-
-✗ Port 3100 in use (node process running)
-  → Kill it: lsof -ti:3100 | xargs kill -9
-  
-✗ Docker not running
-  → Start Docker and try again
-
-✗ Disk <5GB available (1.2GB free)
-  → Clean up disk space first
+⚠ Blocked: no access to cobaltspeech/devbox-main — cannot provision the dev container.
+Confirm access with the team before spice-rack can run end-to-end on this machine.
 ```
 
 5. **Blockers**
    - Go < 1.24 → error
-   - Node < 18 → error
+   - Node < 20 → error
    - Docker not running → error
+   - Nix, direnv, Tailscale, SSH-to-GitHub, or AWS creds missing → error (each blocks the
+     devcontainer provisioning step)
+   - No access to `cobaltspeech/devbox-main` → error (current known blocker)
    - Any required port in use → warning (can kill and retry)
    - Disk < 2GB → error
    - Memory < 2GB free → warning
@@ -90,7 +92,6 @@ Or add as pre-hook to `/start-spice-rack` (run check, then if all clear, start s
 
 ## Implementation
 
-- Use Bash to run version checks and port scans
+- Use Bash to run version/connectivity checks and port scans
 - Parse output to extract version numbers and compare
-- Quick total runtime: ~5-10s
 - If any blocker, stop and report clearly

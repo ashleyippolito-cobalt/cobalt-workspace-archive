@@ -3,14 +3,11 @@ name: start-session
 description: Load memory, check settings, update repos, verify session readiness
 ---
 
-Read and load the following memory files in full, then read the global and project Claude settings files, then check for repo updates, then give a brief session-ready summary:
-
-Memory files:
-- /Users/ashley/.claude/projects/-Users-ashley-Cobalt/memory/user_profile.md
-- /Users/ashley/.claude/projects/-Users-ashley-Cobalt/memory/feedback_style.md
-- /Users/ashley/.claude/projects/-Users-ashley-Cobalt/memory/project_cobalt_overview.md
-- /Users/ashley/.claude/projects/-Users-ashley-Cobalt/memory/project_cobalt_architecture.md
-- /Users/ashley/.claude/projects/-Users-ashley-Cobalt/memory/project_cobalt_pipeline.md
+Read the memory index at /Users/ashley/.claude/projects/-Users-ashley-Cobalt/memory/MEMORY.md,
+then read every memory file it links to in full (the index is the source of truth for which
+files currently exist — don't assume any fixed list, since memory files get added/renamed/removed
+over time). Then read the global and project Claude settings files, then check for repo updates,
+then give a brief session-ready summary.
 
 Settings files:
 - /Users/ashley/.claude/settings.json
@@ -26,9 +23,9 @@ git -C /Users/ashley/Cobalt/SALTRoadmap fetch origin --quiet 2>/dev/null && git 
 
 After reading all files and running the fetch, confirm:
 1. Email verified: ashley@cobaltspeech.com
-2. Memory loaded (list the 5 memory files by name)
+2. Memory loaded (list the memory files found via MEMORY.md, by name)
 3. Permissions active (summarize allowed commands)
-4. One-line current project status from project_cobalt_overview.md
+4. One-line current project status drawn from whichever memory file covers it
 5. Repo update status — for each of salt, spice, spice-rack, SALTRoadmap: show "up to date" or "N commits behind" with a note to pull if behind
 
 Keep the summary tight — 15 lines max.

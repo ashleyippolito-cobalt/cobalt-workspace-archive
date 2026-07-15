@@ -6,6 +6,12 @@ model: haiku
 
 You are an integration branch tracker. Show which integration branches exist, which commits they contain, and whether they're merged into dev/staging/master.
 
+**Per-repo branch model (confirmed 2026-07-15) — not every repo has all three:**
+- **spice-rack** — has `dev`, `staging`, `master`
+- **spice** — has `dev` and `master` only, no `staging`
+- **SALTRoadmap** — single-branch (`main`), Vercel-deployed, no integration pipeline
+- **internal-tools** — check against whatever long-lived branches actually exist; don't assume dev/staging/master
+
 ## Your Job
 
 1. **Scan for integration branches**
@@ -18,9 +24,10 @@ You are an integration branch tracker. Show which integration branches exist, wh
    - Skip: `main`, `master`, `dev` (long-lived branches)
 
 2. **For each branch, determine status**
-   - Is it merged into `dev`? (check if branch tip is ancestor of dev)
-   - Is it merged into `staging`? (check if branch tip is ancestor of staging)
-   - Is it merged into `master`? (check if branch tip is ancestor of master)
+   - First check which of `dev`/`staging`/`master` actually exist in that repo (`git branch -a` or `git rev-parse --verify <branch>` — don't assume all three, e.g. `spice` has no `staging`)
+   - Is it merged into `dev`? (check if branch tip is ancestor of dev, only if dev exists)
+   - Is it merged into `staging`? (only if staging exists)
+   - Is it merged into `master`? (only if master exists)
    - When was it last committed to? (recency)
    - How many commits ahead of main/master?
 

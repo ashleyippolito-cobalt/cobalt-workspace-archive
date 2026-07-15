@@ -19,6 +19,6 @@ The agent will:
   3. **Not in a Release** — open unassigned issues
   4. **Legend** — status definitions
 
-Output saved to release-plan.xlsx in project root.
+Default output: `~/Desktop/cobalt-release-plan.xlsx` (or wherever you ask for — the agent takes the path in plain language, e.g. "save to my Desktop").
 
 Use when you need to refresh the release dashboard from Linear.
