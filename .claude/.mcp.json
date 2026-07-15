@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "Linear": {
+      "type": "claude.ai"
+    }
+  }
+}
