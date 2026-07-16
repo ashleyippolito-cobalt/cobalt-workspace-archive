@@ -1,2 +1,9 @@
 .DS_Store
 .claude/settings.local.json
+
+# Sibling product repo clones — real code lives in their own GitHub repos,
+# not tracked as part of this archive repo.
+/SALTRoadmap/
+/internal-tools/
+/spice/
+/spice-rack/
