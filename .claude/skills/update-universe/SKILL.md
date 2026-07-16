@@ -20,8 +20,8 @@ Updates the Cobalt Release Plan dashboard with comprehensive live Linear data an
 
 1. Queries Linear API comprehensively (all releases, manifests, unscheduled)
 2. Filters out scheduled items and their parents
-3. Updates `/Users/ashley/Cobalt/Ashley/cobalt-release-plan-web/public/release-data.json`
-   (confirmed 2026-07-15: the repo lives under `Ashley/`, not at the Cobalt root)
+3. Updates `/Users/ashley/Cobalt/cobalt-release-plan-web/public/release-data.json`
+   (moved to the Cobalt root 2026-07-16, alongside the other sibling repos — was under `Ashley/` before that)
 4. Commits and pushes to GitHub
 5. Vercel auto-redeploys within seconds — unverified from local files; if it turns out
    Vercel isn't auto-deploying from this repo (as is the case for SALTRoadmap, see

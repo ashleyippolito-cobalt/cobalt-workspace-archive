@@ -15,6 +15,7 @@ Clinical speech-language AI platform. HIPAA/FERPA/COPPA-sensitive — no PII in 
 │   ├── mock-ups/*/v2/          # Built output — one dir per persona (salt-saas/transcriber/transcription-admin/admin)
 │   ├── context/handoff-docs/   # CLAUDE.md (authoritative), ASHLEYCHANGES.md, DEV_GUIDE.md
 │   └── index.html              # Prototype Library landing page (open directly in browser)
+├── cobalt-release-plan-web/  # Live Linear-backed release-plan dashboard (Next.js) — source for SALTRoadmap's Release Plan tab
 └── Ashley/           # Ashley's personal projects + validation work
     └── validation/             # SALT24 validation tooling + data
         ├── src/pipeline/           # Agreement validation pipeline (Python)
