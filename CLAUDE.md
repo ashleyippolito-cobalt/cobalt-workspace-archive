@@ -17,7 +17,11 @@ Clinical speech-language AI platform. HIPAA/FERPA/COPPA-sensitive — no PII in 
 │   ├── context/handoff-docs/   # CLAUDE.md (authoritative component map), ASHLEYCHANGES.md, DEV_GUIDE.md
 │   └── index.html              # Vite SPA entry point (run `npm run dev`, don't open directly)
 ├── cobalt-release-plan-web/  # Live Linear-backed release-plan dashboard (Next.js) — source for SALTRoadmap's Release Plan tab
-└── Ashley/           # Ashley's personal projects + validation work
+└── Ashley/           # Personal reference material only — not a product path.
+    │                 # (cobalt-release-plan-web moved OUT of here to workspace root in
+    │                 # 2026-07-16 specifically because nesting caused confusion — don't
+    │                 # add anything here that's a live/deployed product going forward.)
+    ├── training-materials/     # Captured SALT Software training-course content (reference for the convention pipeline)
     └── validation/             # SALT24 validation tooling + data
         ├── src/pipeline/           # Agreement validation pipeline (Python)
         ├── synthetic_salt_corpus/  # Synthetic SALT transcript generator
