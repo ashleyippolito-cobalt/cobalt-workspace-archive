@@ -7,4 +7,15 @@
 /internal-tools/
 /spice/
 /spice-rack/
+/salt/
 /cobalt-release-plan-web/
+
+# macOS custom-folder-icon resource-fork artifact
+Icon?
+
+# Auto-generated Codex-compatible mirror of .claude/skills + .claude/agents
+# (lets Ashley use the same domain-expert agents/skills from Codex) — derived
+# content, not a source of truth, don't track.
+/.agents/
+/.codex/
+/AGENTS.md

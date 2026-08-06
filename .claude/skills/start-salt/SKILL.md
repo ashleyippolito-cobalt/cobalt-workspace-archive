@@ -10,10 +10,10 @@ project's Nix devshell (`ifndef IN_NIX_SHELL`), and that flake is Linux-only —
 evaluate on this Mac (`aarch64-darwin`). The old approach in this skill (build
 `salt-sass-server` natively with plain `go build`, bypassing `make`/Nix entirely) still
 works **only if you don't need any `make` target** — building via bare `go build` doesn't
-go through the Makefile guard, so it may still be viable for salt specifically, unlike
-spice-rack where `run-stack.sh` shells out to `make run-docker` directly. Not yet verified
-end-to-end since AWS credentials (needed for `make fetch-models` / the saltier worker) are
-also still outstanding — ask in `#engineering`.
+go through the Makefile guard, so it's viable for salt specifically, unlike spice-rack
+where `run-stack.sh` shells out to `make run-docker` directly. Confirmed: the Nix guard is a
+blanket check at the top of the Makefile, so `make fetch-models` unambiguously hits the same
+guard as `make run-docker` — it's still blocked on AWS credentials (`#engineering`) regardless.
 
 If a devcontainer becomes available for salt (check whether `cobaltspeech/devbox-main`
 covers salt the same way it covers spice-rack — currently blocked, this account can't see
@@ -60,8 +60,8 @@ Show a table confirming all services are up:
 
 Note: Jobs will reach AWAITING_AUDIO → QUEUED state but won't process until the saltier
 worker is running (needs AWS model files — run `make fetch-models` from
-/Users/ashley/Cobalt/salt once credentials arrive **and** once it's confirmed that target
-doesn't hit the same Nix guard as spice-rack's `run-docker`).
+/Users/ashley/Cobalt/salt once credentials arrive; this will still hit the Nix guard, same
+as every other `make` target in this repo).
 
 ## Notes
 - Log: /tmp/salt-sass.log
@@ -70,4 +70,4 @@ doesn't hit the same Nix guard as spice-rack's `run-docker`).
 - Storage: filesystem, writing to /tmp/salt-saas-storage
 - Queue: in-memory (no Pub/Sub needed for API layer)
 - To stop: `pkill -f "salt-sass-server"` then `cd /Users/ashley/Cobalt/salt/apps/salt-sass && docker compose down`
-- Once AWS credentials arrive: `make fetch-models` then `docker compose -f docker-compose.yml -f docker-compose.local.yml up --build saltier-worker`
+- Once AWS credentials arrive: `make fetch-models` then `docker compose -f docker-compose.yml up --build saltier-worker` (saltier-worker runs CPU-only by default now — no separate `.local` compose override or Dockerfile needed; GPU is an opt-in overlay via `docker-compose.gpu.yml`)

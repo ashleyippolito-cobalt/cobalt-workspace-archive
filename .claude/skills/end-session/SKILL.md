@@ -25,16 +25,23 @@ For each item worth saving: write a new memory file (or update an existing one) 
 
 ## Step 2 — Component map check
 
-Check git status in SALTRoadmap to see which source files changed this session:
+Check git status in SALTRoadmap to see which source files changed this session. SALTRoadmap now
+has two source trees: the legacy prototype suite (`development/salt-prototype-suite/src/views/`)
+and the Cobalt Biz Hub app (top-level `src/pages/`, `src/components/`) — check both:
 
 ```bash
-git -C /Users/ashley/Cobalt/SALTRoadmap diff --name-only HEAD~5..HEAD 2>/dev/null | grep "src/views"
-git -C /Users/ashley/Cobalt/SALTRoadmap diff --name-only 2>/dev/null | grep "src/views"
+git -C /Users/ashley/Cobalt/SALTRoadmap diff --name-only HEAD~5..HEAD 2>/dev/null | grep -E "src/views|src/pages|src/components"
+git -C /Users/ashley/Cobalt/SALTRoadmap diff --name-only 2>/dev/null | grep -E "src/views|src/pages|src/components"
 ```
 
-For any `src/views/` file that changed, check whether its entry in `/Users/ashley/Cobalt/SALTRoadmap/CLAUDE.md` is stale (wrong line count or wrong tab offsets). If stale, run `wc -l` and grep for key landmarks (`export default`, `subTab ===`, tab name strings) to get current line numbers, then update the component map entry. If a file isn't in the map yet, add it.
+For any matched file that changed, check whether its entry in
+`/Users/ashley/Cobalt/SALTRoadmap/context/handoff-docs/CLAUDE.md` is stale (wrong line count or
+wrong tab offsets). If stale, run `wc -l` and grep for key landmarks (`export default`,
+`subTab ===`, tab name strings) to get current line numbers, then update the component map entry.
+If a file isn't in the map yet, add it.
 
-Note: CLAUDE.md is gitignored in SALTRoadmap — the update saves locally but won't be committed. That's expected.
+Note: this file is tracked in git (not gitignored) — the update needs to be included in the
+commit in Step 3 like any other change.
 
 ---
 

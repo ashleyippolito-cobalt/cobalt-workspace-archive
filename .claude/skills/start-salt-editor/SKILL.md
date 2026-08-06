@@ -3,50 +3,46 @@ name: start-salt-editor
 description: Start the SALT Convention Editor (local AI-assisted SALT transcript editor)
 ---
 
-Start the SALT Convention Editor (salt-convention-editor-sample). Repo is expected at /Users/ashley/Cobalt/prototypes/salt-convention-editor-sample.
+Start the SALT Convention Editor (salt-convention-editor-sample). Repo is at
+`/Users/ashley/Cobalt/salt-convention-editor-sample` (root-level sibling clone, not under a
+`prototypes/` subdirectory).
 
 This is a local-only AI-assisted SALT transcript editor. It uses an LLM (OpenAI, Gemini, or OpenRouter) to propose inline edits.
 
-**Known issue (confirmed 2026-07-15):** this repo is not present anywhere on this machine
-— not at the path above, not found in a broader disk search. It may not have been
-re-cloned after the laptop rebuild (see [[new-laptop-environment-rebuild]]), or the repo
-name/location may have changed. Before running the steps below, check for it first:
-
+## 1. Confirm the repo is present
 ```bash
-ls -d /Users/ashley/Cobalt/prototypes/salt-convention-editor-sample 2>/dev/null || echo "MISSING"
+ls -d /Users/ashley/Cobalt/salt-convention-editor-sample 2>/dev/null || echo "MISSING"
 ```
+If missing, stop and tell the user the repo needs to be re-cloned before this skill can run.
 
-If missing, stop and tell the user the repo needs to be located or re-cloned before this
-skill can run — don't silently skip to a guessed path.
-
-## 1. Check for .env.local
+## 2. Check for .env.local
 ```bash
-ls /Users/ashley/Cobalt/prototypes/salt-convention-editor-sample/.env.local 2>/dev/null || echo "MISSING"
+ls /Users/ashley/Cobalt/salt-convention-editor-sample/.env.local 2>/dev/null || echo "MISSING"
 ```
 If missing, copy from .env.example and warn the user:
 ```bash
-cp /Users/ashley/Cobalt/prototypes/salt-convention-editor-sample/.env.example \
-   /Users/ashley/Cobalt/prototypes/salt-convention-editor-sample/.env.local
+cp /Users/ashley/Cobalt/salt-convention-editor-sample/.env.example \
+   /Users/ashley/Cobalt/salt-convention-editor-sample/.env.local
 ```
 Then tell the user: "⚠️  .env.local created from .env.example — edit it to add your OPENAI_API_KEY (or set LLM_PROVIDER=gemini and run `gcloud auth application-default login`)."
 
-## 2. Install dependencies if needed
+## 3. Install dependencies if needed
 ```bash
-ls /Users/ashley/Cobalt/prototypes/salt-convention-editor-sample/node_modules 2>/dev/null | wc -l
+ls /Users/ashley/Cobalt/salt-convention-editor-sample/node_modules 2>/dev/null | wc -l
 ```
 If 0, run:
 ```bash
-cd /Users/ashley/Cobalt/prototypes/salt-convention-editor-sample && npm install 2>&1 | tail -3
+cd /Users/ashley/Cobalt/salt-convention-editor-sample && npm install 2>&1 | tail -3
 ```
 
-## 3. Start dev server on port 3200
+## 4. Start dev server on port 3200
 ```bash
-cd /Users/ashley/Cobalt/prototypes/salt-convention-editor-sample && npm run dev -- --port 3200 > /tmp/salt-editor.log 2>&1 &
+cd /Users/ashley/Cobalt/salt-convention-editor-sample && npm run dev -- --port 3200 > /tmp/salt-editor.log 2>&1 &
 echo "PID: $!"
 ```
 Poll until `curl -s http://localhost:3200` responds (up to 30s).
 
-## 4. Print status summary
+## 5. Print status summary
 | Service | URL | Status |
 |---|---|---|
 | SALT Convention Editor | http://localhost:3200 | ✅ |
