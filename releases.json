@@ -13,7 +13,7 @@
       "master": true
     },
     "description": "Combined product release bundling Mercury + Saturn + Guillermo's editor/transcriber workflow + Lyra + Pluto (release-of-releases).",
-    "notes": "Merged into master (prod branch) + dev + staging. Prod deploy not yet run (no vX.Y.Z tag, deploy-prod.yml not run). Trailing gold-corpus commit 185182cf/PR #527 not yet re-promoted to all envs."
+    "notes": "Merged into master (prod branch) + dev + staging. Prod deploy not yet run (no vX.Y.Z tag, deploy-prod.yml not run). As of 2026-08-06, Mars is the latest released code across all envs."
   },
   {
     "id": "CORE-1190",
@@ -108,8 +108,8 @@
       "staging": false,
       "master": false
     },
-    "description": "Product release following Mars; gathers feature/fix branches that land post-Mars-cut (speaker-caseload ownership scoping, admin release-info page, PHI retention hardening, erasure/retention deletes, IDOR audit sweep, Neptune licensing epic, Magento connector, targeted bug fixes).",
-    "notes": "In progress \u2014 gathering constituents; release/orion cut post-Mars, 11 commits, not yet promoted to any env. Some constituents (CORE-1294, CORE-1298) already landed in the master base via Pluto and ride Orion automatically."
+    "description": "Product release following Mars; gathers feature/fix branches that land post-Mars-cut (speaker-caseload ownership scoping, admin release-info page, PHI retention hardening, erasure/retention deletes, IDOR audit sweep, Neptune licensing epic, Magento connector, targeted bug fixes). Now absorbs Transcriber Portal 1.1 (CORE-1627) as a sub-release.",
+    "notes": "In progress \u2014 gathering constituents; release/orion cut post-Mars, 11 commits, not yet promoted to any env. Transcriber Portal 1.1 re-parented under Orion on 2026-07-14."
   },
   {
     "id": "CORE-1227",
@@ -162,8 +162,8 @@
   {
     "id": "CORE-1627",
     "name": "Transcriber Portal 1.1",
-    "level": "major",
-    "parent": null,
+    "level": "minor",
+    "parent": "CORE-1566",
     "codename": "Transcriber Portal 1.1",
     "status_linear": "Backlog",
     "integration_branch": "release/transcriber-portal-1.1 (not yet cut)",
@@ -172,7 +172,7 @@
       "staging": false,
       "master": false
     },
-    "description": "SALT company/ops dashboards (General Admin / Transcription Admin / Transcriber) \u2014 productionizes the CORE-1276 frozen prototypes. Standalone WIP release, not in Orion; major-release target TBD.",
-    "notes": "Planned \u2014 WIP; 12 components (rocks/pebbles/sand: F0/F1 foundations, R1-R4, P1-P5, sand chrome) all Backlog, no PRs yet."
+    "description": "SALT company/ops dashboards (General Admin / Transcription Admin / Transcriber) \u2014 productionizes the CORE-1276 frozen prototypes. Now a sub-release of Orion (CORE-1566) as of 2026-07-14.",
+    "notes": "Planned \u2014 WIP; 12 components (rocks/pebbles/sand: F0/F1 foundations, R1-R4, P1-P5, sand chrome) all Backlog. Components reach their promotion points independently though they ship as a sub-release of Orion."
   }
 ]
